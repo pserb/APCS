@@ -1,2 +1,2 @@
 # Paul Serbanescu - APCS
-First semester AP computer science repo
+First semester AP computer science
