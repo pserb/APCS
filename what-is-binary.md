@@ -6,3 +6,4 @@
 2. Start at the right and assign place values as powers of 2 (2^0, 2^1, 2^2, etc.) Then multiply each 2^x by its corresponding value in base 2, then the sum of the products is the value of the numbe in base 10.
 ### Decimal -> Binary
 3. Take the initial number and divide it by 2. The remainder is the rightmost value in base 2. Then divide the quotient by 2, and the remainder is the next value on the left. Repeat this process until the quotient is 0.
+![Decimal to Binary](https://github.com/pserb/APCS/blob/main/dectobin.jpeg?raw=true)
