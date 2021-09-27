@@ -1,2 +1,2 @@
 # Paul Serbanescu - APCS
-First semester AP computer science
+First semester AP computer science AB
