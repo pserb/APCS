@@ -22,8 +22,8 @@ Discoveries:
 
 		-- ALTERNATIVELY --
 
-		static void greet() {							==>	BENEFITS -- only one methond call in main which greatly declutters main and moves all repetative/not extremely vital
-		 	System.out.println("string1");						code to methods. makes it much easier to find and edit these three strings (or add however many you want)
+		static void greet() {
+		 	System.out.println("string1");
 		 	System.out.println("string2");
 			System.out.println("string3");
 		}
@@ -31,6 +31,8 @@ Discoveries:
 			greet();
 		}
 
+		==>	BENEFITS -- only one methond call in main which greatly declutters main and moves all repetative/not extremely vital
+						code to methods. makes it much easier to find and edit these three strings (or add however many you want)
 */
 
 public class Greet {
