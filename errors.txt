@@ -1,0 +1,4 @@
+Greet.java:2: error: <identifier> expected
+	void greet(String) {
+	                 ^
+1 error
