@@ -1,0 +1,14 @@
+public class <filename> {
+}
+
+Surrounds all the code of the file. It is important that the class name matches the filename (case sensitive)
+ex: Hello.java --> classname is Hello
+
+
+public static void main(String[] args) {
+}
+
+Surrounds all code being run -- where you would put a println statement.
+
+javac Hello.java --> creates Hello.class
+java Hello --> runs code
