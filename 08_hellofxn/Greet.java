@@ -14,7 +14,7 @@ Discoveries:
 
 	Two ways to do this:
 		static void greet(String s) {
-			System.out.println(s);
+			System.out.println("kind message" + s);
 		}
 		public static void main(String[] args) {
 			greet("your string here"); - this emulates how print() works in python
@@ -33,25 +33,16 @@ Discoveries:
 
 		==>	BENEFITS -- only one methond call in main which greatly declutters main and moves all repetative/not extremely vital
 						code to methods. makes it much easier to find and edit these three strings (or add however many you want)
+		--> CONS -- have to hardcode each line and repeat very similar code
 */
 
 public class Greet {
 	static void greet(String s) {
-		System.out.println(s);
+		System.out.println("What it do " + s + "-do?");
 	}
-	static void alternateGreet() {
-		System.out.println("Hello there Obi-Wan Kenobi");
-		System.out.println("Good day Donald, Duck");
-		System.out.println("How it do Mr. Moo?");
-	}
-
 	public static void main(String[] args) {
-		greet("Duck,");
-		greet("Duck...");
-		greet("GOOSE!");
-
-		System.out.println();
-
-		alternateGreet();
+		greet("Lucky");
+		greet("Ducky");
+		greet("Funny");
 	}
 }
