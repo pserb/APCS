@@ -1,0 +1,5 @@
+Datatypes:
+In java, you have to declare variables then assign them.
+Ex:
+int number = 3;
+double decimalNum = 3.14;
