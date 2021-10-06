@@ -13,7 +13,6 @@ UNRESOLVED QUESTIONS:
 
 */
 
-import java.util.*
 public class Greet {
 	public static void main(String[] args) {
 		BigSib god = new BigSib();
@@ -27,11 +26,6 @@ public class Greet {
 		
 		batman.setHelloMsg("YO ARE YOU REALLY ");
 		System.out.println(batman.greet("BATMAN?"));
-		
-		
-		List<String> namelist = Arrays.asList("first", "second", "kanye");
-		
-		namelist.forEach(name -> System.out.println("ello there, " + name));
 		
 	}
 }
