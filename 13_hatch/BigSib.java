@@ -5,7 +5,7 @@ HW 13 - Where do BigSibs come from?
 
 DISCOVERIES:
 	Constructors are ran automatically when a new instance of BigSib is created. You can provide parameters - such as a String, however
-	this creates a small problem. Every instance of BigSib will have to have be provided that parameter when initialized otherwise java will trhow an error
+	this creates a small problem. Every instance of BigSib will have to have be provided that parameter when initialized otherwise java will throw an error
 		BigSib(String s)
 
 		BigSib bob = new BigSib("ello");  // "ello" MUST be there
