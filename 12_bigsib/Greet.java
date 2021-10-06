@@ -17,15 +17,14 @@ public class Greet {
 	public static void main(String[] args) {
 		BigSib god = new BigSib();
 
-		god.setHelloMsg("What's up my man ");
+		god.setHelloMsg("What's up my man"); 
 		System.out.println(god.greet("god"));
 		
 		/////////////////////////////////////
 		
 		BigSib batman = new BigSib();
 		
-		batman.setHelloMsg("YO ARE YOU REALLY ");
+		batman.setHelloMsg("YO ARE YOU REALLY");
 		System.out.println(batman.greet("BATMAN?"));
-		
 	}
 }
