@@ -4,7 +4,10 @@ APCS
 HW 12 - On Elder Individuality and the Elimination of Radio Fuzz
 
 DISCOVERIES:
-	
+	When creating a new object you must provide a name for it, and calling its attributes (methods, variables), you use the
+	DOT operator:
+		Car toyota = new Car();
+		toyota.color = red;
 
 UNRESOLVED QUESTIONS:
 	None
