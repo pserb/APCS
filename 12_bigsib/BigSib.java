@@ -15,7 +15,6 @@ UNRESOLVED QUESTIONS:
 
 public class BigSib {
 
-	String name;
 	String helloMsg;
 	
 	public void setHelloMsg(String helloMsg) {
@@ -23,6 +22,6 @@ public class BigSib {
 	}
 	
 	public String greet(String name) {
-		return helloMsg + name;
+		return helloMsg + " " + name;
 	}
 }
