@@ -1,4 +1,4 @@
-/* NAMESPACE - Paul Serbanescu, Max, Orion - Incl. Duckies Soup, Versa, and Von Geburt
+/* HorseSoup - Paul Serbanescu and Xinqing Lin Incl. duckies Soup and Horse
 APCS
 
 HW 13 - Where do BigSibs come from?
