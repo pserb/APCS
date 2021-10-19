@@ -12,9 +12,9 @@ It's nice outside. "It's like... very sunny" - Yuki
 QCC:
 Why does float not work???
 
-Q2: 
+Q2: We know that Java must provide a default constructor because we have not defined one, and yet Java does not scream error at us.
 
-Q3: We know that Java must provide a default constructor because we have not defined one, and yet Java does not scream error at us.
+Q3: A test to see whether Java provides a string representation would be to try System.out.println(instance) or System.out.println(ClassName)
 */
 
 public class BankAccount {
@@ -61,21 +61,15 @@ public class BankAccount {
 	
 	public static void main(String[] args) {
 		BankAccount duck = new BankAccount();
+		
 		duck.setName("Scrooge");
 		duck.setPassword("moneymoney");
 		duck.setPin(2418);
 		duck.setAccNum(123456789);
 		duck.setBalance(0);
+		duck.deposit(520);
+		duck.withdraw(100);
 		
-		System.out.println(duck.name);
-		System.out.println(duck.password);
-		System.out.println(duck.pin);
-		System.out.println(duck.accNum);
-		System.out.println(duck.balance); // prints out initial balance (0)
-		
-		System.out.println(duck.deposit(520));
-		System.out.println(duck.withdraw(100));
-		System.out.println("");
 		System.out.println(duck.getAccInfo());
 	}
 }
