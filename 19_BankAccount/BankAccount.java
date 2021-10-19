@@ -5,6 +5,9 @@
    10/18/2021
 
    DISCO:
+   If statements can evaluate multiple conditions: such as if x > 10 or x  < 5 by using the || operator
+   if x > 10 and x < 5 uses the && operator
+   
    QCC:
 **/
 
