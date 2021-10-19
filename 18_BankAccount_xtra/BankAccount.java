@@ -72,11 +72,11 @@ public class BankAccount {
     public static void main(String[] args) {
         // every new account holder is given a random account number
         // this account number can be accessed by the getAccountNumber() method
-        BankAccount scrooge = new BankAccount();
-        System.out.println(donald.getAccountNumber());
+        // BankAccount scrooge = new BankAccount();
+        // System.out.println(donald.getAccountNumber());
 
         // because the list is public and static, you can print out in main
-        System.out.println(allAccountNums);
+        // System.out.println(allAccountNums);
 
         // scrooge with a pin
         BankAccount scroogeWithPin = new BankAccount(4201);
