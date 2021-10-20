@@ -1,9 +1,9 @@
 /*
    Scrooge Playducks - Paul Serbanescu, Yuki Feng, Jaylen Zeng
    APCS Period 7
-   HW20: External Audit - Hacking
+   HW20: External Audit
    10/19/2021
-   DISCO: When including a parameter for a method that returns short, you must include the phrase "(short)" before the value.
+   DISCO: When including a parameter for a method that returns short, you must include the phrase "(short)" before the value to convert the inputted int into a short
    QCC: Why must we include (short) when calling a method that returns a short value? Is this a special case, or are there other data types that do this?
 */
 
