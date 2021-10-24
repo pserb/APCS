@@ -22,7 +22,8 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-	upFace = "heads";
+	  upFace = "heads";
+    bias = 0.5;
   }
 
 
@@ -40,6 +41,7 @@ public class Coin {
   public Coin( String s ) {
   	name = s;
   	upFace = "heads";
+    bias = 0.5;
   }
 
 
@@ -49,8 +51,9 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-	name = s;
-	upFace = nowFace;
+    name = s;
+    upFace = nowFace;
+    bias = 0.5;
   }
 
 
