@@ -1,14 +1,7 @@
 /***
-   NAMESPACE - Paul Serbanescu, Max Schneider
-   
-   DISCO:
-   Using the this. keyword refers to a specific instance of an object
-   This is useful in trying to assert if a specific instance's variable is equal to that of another instance. (equals() method)
-   
-   you cannot compare strings with == in Java ("string" == "string" does not work). You muse use the .equals("string") method.
-   
-   QCC:
-   Why can't you compare strings with == ?
+ *  class Coin
+ *  by Clyde "Thluffy" Sinclair
+ *  SKELETON
  ***/
 
 public class Coin {
@@ -30,7 +23,7 @@ public class Coin {
    ***/
   public Coin() {
 	  upFace = "heads";
-	  bias = 0.5;
+    bias = 0.5;
   }
 
 
@@ -46,10 +39,10 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-	  name = s;
-	  assignValue(name);
-	  upFace = "heads";
-	  bias = 0.5;
+  	name = s;
+    assignValue(name);
+  	upFace = "heads";
+    bias = 0.5;
   }
 
 
