@@ -1,13 +1,13 @@
 /***
- * NAMESPACE (Orion Roven, Max Schneider, Paul Serbanescu)
+ * Clyde "Thluffy" Sinclair
  * APCS
- * Lab00 - Etterbay Odingcay Oughthray Ollaborationcay
- * 2021-11-08r
- * time spent: 1hr
+ * HW31 -- deploying linear search on Strings, using helper methods
+ * 2021-11-04r
+ * time spent: .5hrs
  *
  * class Pig
  * a Pig Latin translator
- * ~~~~~~~~~~~~~~~~~~~ V1~~~~~~~~~~~~~~~~~~~
+ * ~~~~~~~~~~~~~~~~~~~ SKELETON ~~~~~~~~~~~~~~~~~~~
  *           9
  *     ,--.-'-,--.
  *     \  /-~-\  /
@@ -25,9 +25,7 @@
 
 public class Pig {
 
-  private static final String VOWELS = "aeiouy";
-  private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  private static final String PUNCS = ".,:;!?";
+  private static final String VOWELS = "aeiou";
 
 
   /**
@@ -90,7 +88,7 @@ public class Pig {
     hasAVowel("zzz") -> false
     **/
   public static boolean hasAVowel( String w ) {
-    return countVowels(w) != 0;
+    return w.indexOf(w) >= 0;
   }
 
 
@@ -122,9 +120,9 @@ public class Pig {
   public static String firstVowel( String w ) {
 
     String ans = "";
-    if ( hasAVowel(w) ) { //Q: Why this necess?
+
+    if ( hasAVowel(w) ) //Q: Why this necess?
       ans = allVowels(w).substring(0,1);
-    }
 
     return ans;
   }
@@ -152,16 +150,6 @@ public class Pig {
 
     String ans = "";
 
-    if (hasPunc(w)) {
-      ans = engToPig(w.substring(0,w.length()-1)) + w.substring(w.length()-1);
-      return ans;
-    }
-
-    if (hasAVowel(w) == false) {
-      ans = w + "ay";
-      return ans;
-    }
-
     if ( beginsWithVowel(w) )
       ans = w + "way";
 
@@ -170,65 +158,17 @@ public class Pig {
       ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
     }
 
-    if (beginsWithUpper(w))
-      ans = ans.substring(0,1).toUpperCase() + ans.substring(1).toLowerCase();
-
-
     return ans;
   }
 
-  /*=====================================
-      boolean isPunc(String) -- tells whether a character is punctuation
-      pre:  symbol.length() == 1
-      post: isPunc(".") -> true
-            isPunc("b") -> false
-      =====================================*/
-    public static boolean isPunc( String symbol ) {
-	    return PUNCS.indexOf( symbol ) != -1;
-    }
-
-
-    /*=====================================
-      boolean isUpperCase(String) -- tells whether a letter is uppercase
-      pre:  letter.length() == 1
-      post: isUpperCase("a") -> false
-            isUpperCase("A") -> true
-      =====================================*/
-    public static boolean isUpperCase( String letter ) {
-      return CAPS.indexOf(letter) != -1;
-    }
-
-
-    /*=====================================
-      boolean hasPunc(String) -- tells whether a String contains punctuation
-      pre:  w != null
-      post: hasPunc(“cat.”) -> true
-            hasPunc(“cat”) -> false
-      =====================================*/
-    public static boolean hasPunc( String w ) {
-      return PUNCS.indexOf(w.substring(w.length()-1)) != -1;
-    }
-
-
-    /*=====================================
-      boolean beginsWithUpper(String) -- tells whether 1st letter is uppercase
-      pre:  w != null and w.length() > 0
-      post: beginsWithUpper("Apple") -> true
-            beginsWithUpper("apple") -> false
-      =====================================*/
-    public static boolean beginsWithUpper( String w ) {
-	    return isUpperCase(w.substring(0,1) );
-    }
 
   public static void main( String[] args ) {
 
     for( String word : args ) {
       System.out.println( "allVowels \t" + allVowels(word) );
-      System.out.println( "firstVowel \t" + firstVowel(word) );
+      System.out.println( "firstVowels \t" + firstVowel(word) );
       System.out.println( "countVowels \t" + countVowels(word) );
       System.out.println( "engToPig \t" + engToPig(word) );
-      System.out.println("beginsWithUpper \t" + beginsWithUpper(word));
-      System.out.println("hasPunc \t" + hasPunc(word));
       System.out.println( "---------------------" );
     }
 

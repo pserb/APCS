@@ -5,9 +5,23 @@
  * 2021-11-08r
  * time spent: 1hr
  *
+ * FILLINS:
+ * DISCO, QCC, HOW WE UTILIZED SCANNER DEMO, WHAT CAUSES RUNTIME ERR IN DEMO
+ * NEW IN THIS version
+ *
+ * DISCO:
+ * How to use Scanner class in Java, and it's two methods hasNext() and next()
+ * hasNext() returns bool: checks for additional lines in bitstream (words.in)
+ * next() returns the next line of the bitstream, in order, from top to bottom
+ *
+ *
+ *
+ *
+ *
+ *
  * class Pig
  * a Pig Latin translator
- * ~~~~~~~~~~~~~~~~~~~ V1~~~~~~~~~~~~~~~~~~~
+ * ~~~~~~~~~~~~~~~~~~~ V2 ~~~~~~~~~~~~~~~~~~~
  *           9
  *     ,--.-'-,--.
  *     \  /-~-\  /
@@ -22,6 +36,7 @@
  *      NEVER STRAY TOO FAR FROM COMPILABILITY/RUNNABILITY!
  ***/
 
+import java.util.Scanner; // import scanner class
 
 public class Pig {
 
@@ -222,15 +237,24 @@ public class Pig {
 
   public static void main( String[] args ) {
 
-    for( String word : args ) {
-      System.out.println( "allVowels \t" + allVowels(word) );
-      System.out.println( "firstVowel \t" + firstVowel(word) );
-      System.out.println( "countVowels \t" + countVowels(word) );
-      System.out.println( "engToPig \t" + engToPig(word) );
-      System.out.println("beginsWithUpper \t" + beginsWithUpper(word));
-      System.out.println("hasPunc \t" + hasPunc(word));
-      System.out.println( "---------------------" );
+    // instantiate new scanner
+    Scanner sc = new Scanner(System.in);
+
+    // using scanner for engToPig
+    while(sc.hasNext()) {
+      System.out.println(engToPig(sc.next()));
     }
+
+    // previous testing code
+    // for( String word : args ) {
+    //   System.out.println( "allVowels \t" + allVowels(word) );
+    //   System.out.println( "firstVowel \t" + firstVowel(word) );
+    //   System.out.println( "countVowels \t" + countVowels(word) );
+    //   System.out.println( "engToPig \t" + engToPig(word) );
+    //   System.out.println("beginsWithUpper \t" + beginsWithUpper(word));
+    //   System.out.println("hasPunc \t" + hasPunc(word));
+    //   System.out.println( "---------------------" );
+    // }
 
   }//end main()
 
