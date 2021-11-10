@@ -27,7 +27,8 @@
 * we put it into out main method as a way to add inputs to the class. 
 *CAUSES THE RUNTIME ERROR
 *The runtime error is caused by the fact that the demo called of rthe next two words. This caused an error when there was only one word remaining. You could just remove the second one and that fixed the problem
- * NEW IN V2 - USE OF SCANNER CLASS TO USE TEST CASES FROM words.in
+ * NEW IN V3 - 
+ * Augmented scanner class to take in LINES inlcuding whitspace
  * Functionality for sentences
  * Y is used appropriately
  *
