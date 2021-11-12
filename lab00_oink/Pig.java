@@ -27,7 +27,8 @@
 * we put it into out main method as a way to add inputs to the class. 
 *CAUSES THE RUNTIME ERROR
 *The runtime error is caused by the fact that the demo called of rthe next two words. This caused an error when there was only one word remaining. You could just remove the second one and that fixed the problem
- * NEW IN V2 - USE OF SCANNER CLASS TO USE TEST CASES FROM words.in
+ * NEW IN V3 - 
+ * Augmented scanner class to take in LINES inlcuding whitspace
  * Functionality for sentences
  * Y is used appropriately
  *
@@ -187,7 +188,7 @@ public class Pig {
         // using scanner for engToPig
         while (sc.hasNext()) {
             // Found using Java Platform SE 7 documentation about the Scanner class
-            // https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html
+            // https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#nextLine()
             // VERY CRITICAL -- nextLine() method!!
             // allows scanner to read whitespace as part of the word (CRITICAL FOR SENTENCES) -- otherwise, the scanner would split a sentence into its words
             /*
