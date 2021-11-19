@@ -1,0 +1,39 @@
+Three types of errors to debug:
+Compile-time errors - something wrong with syntax
+Run-time errors - something goes wrong while program is running
+Logic errors - cause the program to do the wrong thing
+
+Compile-time errors
+Spewing error messages - 100 error messages doesn’t mean 100 errors
+ONLY THE FIRST error message is truly reliable.
+Fix one error at a time then recompile
+
+Weird compiler message, and it won’t go away
+Read the error message, it might not make sense but it’ll tell you where the problem is
+
+I can’t get it to compile no matter what I do
+Debug by bisection:
+Make a backup of the file, then delete half the code, try compiling again. If it compiles, you know the error is in the other half and vice versa.
+
+Run-time errors
+My program hangs - stops and seems to be doing nothing
+Infinite recursion/loops produce a StackOverflowError
+
+NullPointerException - you tried to access an instance var or method on an object that is currently null. String s; <- null.
+
+ArithmeticException - divide by zero
+
+Use print statements to see what your code is doing, but make them concise and easy to read! Maybe combine some or format them well
+
+Logic Errors
+Try tracing your code. It compiles, so it is performing as you wrote it. Trace it to see where things go wrong, and how that might be fixed.
+
+Break up lengthy complex expressions into simpler ones to see what part of it is wrong.
+
+USE PARENTHESES - order of operations
+
+Print statements might not print all the time, try switching to println
+
+The computer hates me, and the program only works when I wear my hat backward
+
+CONSULT DUCKIE - talk to them. Discuss. Think about a solution
