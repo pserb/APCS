@@ -6,11 +6,13 @@ HW41 - Be Rational/Getting more comfortable with classes/created a class that ca
 time spent: 25min
 
 DISCOVERIES:
-A rational number is actually a number that can be expressed by a ratio
-this() has to go in the first line of a overloaded constructor, never encountered that before
+A rational number is actually a number that can be expressed by a ratio of integers.
+this() has to go in the first line of a overloaded constructor, never encountered that before.
 
-QUESTION:
-
+QUESTIONS:
+How might we use the compareTo method to generate equivalent representations of the same rational number?
+Can we generate a 2D-array of length N to generate all rationals with numerator, denominator at most N? Making N large would allow us
+to generate many rationals without needing many instances of class Rational.
 */
 
 public class Rational {
