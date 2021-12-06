@@ -1,8 +1,8 @@
 /*
 TNPG: Pseb & Co (Andrew Piatesky, Paul Serbanescu, Joseph Othman) and Burnt Peanut
 APCS
-HW41 - Be Rational/Getting more comfortable with classes/created a class that can express rational numbers through the use of instance variables.
-2021-12-1
+HW42 - Be More Rational
+2021-12-6
 time spent: 25min
 
 DISCOVERIES:
