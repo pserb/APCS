@@ -87,6 +87,12 @@ public class SuperArray
   public void add( int index, int newVal )
   {
     /* YOUR IMPLEMENTATION HERE */
+    // int shift = 0;
+    _size++;
+    for (int i = _size; i > index; i--) {
+      _data[i] = _data[i-1];
+    }
+    _data[index] = newVal;
   }
 
 
@@ -118,7 +124,6 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-    /*
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
@@ -137,7 +142,7 @@ public class SuperArray
       System.out.println("new length of underlying array: "
       + curtis._data.length );
       }
-*/
+
       SuperArray mayfield = new SuperArray();
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
@@ -157,7 +162,6 @@ public class SuperArray
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
-      /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
 
       mayfield.add(3,99);
       System.out.println("Printing SuperArray mayfield post-insert...");
@@ -168,6 +172,8 @@ public class SuperArray
       mayfield.add(1,77);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
+      /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
+
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
