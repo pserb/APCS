@@ -32,6 +32,13 @@ public class SuperArray
     this._size = this._data.length;
   }
 
+  //ADDED OVERLOADED CONSTRUCTOR
+  public SuperArray( int size ) {
+    this();
+    this._data = new int[size];
+    this._size = this._data.length;
+  }
+
 
   //output SuperArray in [a,b,c] format
   public String toString()
@@ -116,6 +123,52 @@ public class SuperArray
     this._size = _data.length;
   }//end pop()
 
+  //EXTRA METHOD -- return max value of array
+  public int max() {
+    int max = this._data[0];
+    for (int i = 0; i < this._size; i++) {
+      if (this._data[i] > max) {
+        max = this._data[i];
+      }
+    }
+    return max;
+  }
+
+  //EXTRA METHOD -- return min value of array
+  public int min() {
+    int min = this._data[0];
+    for (int i = 0; i < this._size; i++) {
+      if (this._data[i] < min) {
+        min = this._data[i];
+      }
+    }
+    return min;
+  }
+
+  //EXTRA METHOD -- return the index of given value in array
+  //if value appears multiple times, this returns the index of its first occurrence
+  public int indexOf( int val ) {
+    for (int i = 0; i < this._size; i++) {
+      if (this._data[i] == val) {
+        return i;
+      }
+    }
+    //if val not in array, return -1
+    return -1;
+  }
+
+  //EXTRA METHOD -- splicing, returns a SuperArray
+  //given a = [0,4,8,12], a[1:3] = [4,8]
+  //precond: start > end, start != end
+  public SuperArray splice( int start, int end ) {
+    //create new SuperArray of length 0
+    SuperArray spliced = new SuperArray(0);
+    for (int i = start; i < end; i++) {
+      spliced.append(this._data[i]);
+    }
+    return spliced;
+  }
+
 
   //main method for testing
   public static void main( String[] args )
@@ -142,6 +195,20 @@ public class SuperArray
       System.out.println("Printing resultant array when popping LAST index in curtis...");
       curtis.pop(10);
       System.out.println(curtis);
+
+      System.out.println("Printing max value of curtis...");
+      System.out.println(curtis.max());
+
+      System.out.println("Printing min value of curtis...");
+      System.out.println(curtis.min());
+
+      System.out.println("Printing index of 10 in curtis...");
+      System.out.println(curtis.indexOf(10));
+      System.out.println("Printing index of 99 in curtis...");
+      System.out.println(curtis.indexOf(99));
+
+      System.out.println("Printing splice [1:3] of curtis...");
+      System.out.println(curtis.splice(1, 3));
 
       for( int i = 0; i < 3; i++ ) {
         curtis.expand();
