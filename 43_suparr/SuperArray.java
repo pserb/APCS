@@ -1,13 +1,22 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW43 -- encapsulation (basic SuperArray functionality)
-// 2021-12-07t
+/*
+TNPG: Pseb & Co (Andrew Piatesky, Paul Serbanescu, Joseph Othman) and Burnt Peanut
+APCS
+HW43 - Array of Steel
+2021-12-06
+time spent: 25min
 
-/***************************
- * class SuperArray
- * Wrapper class for array. Facilitates resizing,
- * getting and setting element values.
- ***************************/
+DISCOVERIES:
+One way to modify arrays is by using a temporary storage array and to "dump" all
+of the info from our previously existing array into it, then to make a new array
+with the same name as the initial array (in our case, _data) and to make the
+necessary changes when we initialize _data.
+
+QUESTIONS:
+What would be the best implementations of append and remove? Should we remove at
+any given index? Should we append any value, and where?
+Is there any built in functionality that will allow us to have these array
+functions?
+*/
 
 public class SuperArray
 {
@@ -70,8 +79,10 @@ public class SuperArray
     this._data[index] = newVal;
     return oldVal;
   }
+  
+  //=== Following are added methods not included in the homework guidelines ===
 
-  //MY METHOD -- append input value to end of array
+  //EXTRA METHOD -- append input value to end of array
   public void append( int val ) {
       int[] oldData = new int[this._size];
       for (int i = 0; i < this._size; i++) {
@@ -84,9 +95,9 @@ public class SuperArray
       }
       this._data[_size] = val;
       this._size = this._data.length;
-  }
+  }//end append()
 
-  //MY METHOD -- pop value at index
+  //EXTRA METHOD -- pop value at index
   public void pop( int index ) {
     int[] oldData = new int[this._size];
     for (int i = 0; i < this._size; i++) {
@@ -103,7 +114,7 @@ public class SuperArray
         }
     }
     this._size = _data.length;
-  }
+  }//end pop()
 
 
   //main method for testing
