@@ -73,7 +73,7 @@ public class SuperArray implements ListInt  {
     // System.out.println(a);
 
     //test methods
-    SuperArray sup = new SuperArray();
+    ListInt sup = new SuperArray();
     System.out.println("Initalizing new SuperArray...");
     System.out.println(sup);
 
