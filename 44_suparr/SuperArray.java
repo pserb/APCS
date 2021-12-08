@@ -1,7 +1,16 @@
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08w
+/*
+TNPG: Pseb & Co (Andrew Piatesky, Paul Serbanescu, Joseph Othman) and Burnt Peanut
+APCS
+HW44 - Array of Grade 316
+2021-12-8
+time spent: 25min
+DISCOVERIES:
+There is no easy way to extend an array, you have to create a new one and then fill it up
+Anyone can make any wrapper class with whatever extra functionality
+QUESTION:
+Is it possible to get the nice formatting for methods in a class i.e 'superArray[1] = something' like in python instead of 'set(1,something)''
+*/
+
 
 /***************************
  * class SuperArray version 2.0
