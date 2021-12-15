@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW47 -- ?
+// PSerb & Co. Paul Serbanescu, Andrew Piatetsky, Joseph Othman
+// APCS pd7
+// HW47 -- Guess Again
 // 2021-12-15w
-// time spent: _ hrs
+// time spent: 0.4 hrs
 
 /***
  * class GuessNumber -- fun fun fun!
@@ -20,10 +20,15 @@
  ***/
 
 /***
-    DISCO:
-
-    QCC:
-
+DISCO:
+- We use break; to terminate a loop.
+- We use return; to terminate a method
+--> https://piazza.com/class/kue5pmk0w7n70n?cid=353 (break vs return)
+- (If you didn't remember from the summer work) we can use a scanner to
+take in user inputs, in this case a guess of the number.
+QCC:
+- What is the fastest searching algorithm that can be implemented in Java?
+- How to avoid the "messy" expression for initialization of _target?
  ***/
 import java.util.Scanner;
 
