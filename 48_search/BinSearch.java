@@ -2,11 +2,6 @@
    class BinSearch
    Binary search on array of Comparables
 **/
-// ====================================================== //
-// compile-time error:
-// Note: BinSearch.java uses unchecked or unsafe operations.
-@SuppressWarnings("unchecked")
-// ====================================================== //
 
 public class BinSearch
 {
@@ -42,18 +37,18 @@ public class BinSearch
     }
 
     // target found
-    if (a[m].compareTo(target) == 0) {
+    if ( ((Integer)a[m]).compareTo((Integer)target) == 0) {
       tPos = m;
     } 
     
     // value at mid index higher than target
-    else if (a[m].compareTo(target) > 0) {
+    else if ( ((Integer)a[m]).compareTo((Integer)target) > 0) {
       hi = m - 1;
       return binSearchRec(a, target, lo, hi);
     }
 
     // value at mid index lower than target
-    else if (a[m].compareTo(target) < 0) {
+    else if ( ((Integer)a[m]).compareTo((Integer)target) < 0) {
       lo = m + 1;
       return binSearchRec(a, target, lo, hi);
     }
@@ -75,16 +70,16 @@ public class BinSearch
       //update mid pos var
       m = (lo + hi) / 2;
       // target found
-      if (a[m].compareTo(target) == 0) {
+      if ( ((Integer)a[m]).compareTo((Integer)target) == 0) {
         tPos = m;
         break;
       }
       // value at mid index higher than target
-      else if (a[m].compareTo(target) > 0) {
+      else if ( ((Integer)a[m]).compareTo((Integer)target) > 0) {
         hi = m - 1;
       }
       // value at mid index lower than target
-      else if (a[m].compareTo(target) < 0) {
+      else if ( ((Integer)a[m]).compareTo((Integer)target) < 0) {
         lo = m + 1;
       }
 
@@ -102,7 +97,7 @@ public class BinSearch
 
     //Q: Why would a FOREACH loop not suffice here?
     for( int i=0; i < arr.length-1; i++ ) {
-      if ( ( arr[i].compareTo(arr[i+1]) > 0 ) ) {
+      if ( ( ((Integer) arr[i] ).compareTo( (Integer) arr[i+1] ) > 0 ) ) {
         return false;
       }
     }
