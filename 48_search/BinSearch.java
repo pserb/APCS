@@ -1,3 +1,32 @@
+// PSerb & Co. Paul Serbanescu, Andrew Piatetsky, Joseph Othman
+// APCS pd7
+// HW48 -- Binary Search
+// 2021-12-16
+// time spent: 0.4 hrs
+
+/***
+DISCO:
+- Binary search is a much more efficient algorithm for searching whether or not an element is
+in a given array, and returning its index.
+- Binary search compares the target to the value at the "average" index of the current search
+space, changing the bounds of the search space as necessary to limit the search.
+- While linear search would require at most (hi-lo+1) steps to find an element, binary search
+only requires the floor of log base 2 of the same expression, plus 1 steps in a worst case
+scenario to find an element.
+- The log comes from continuously dividing the search space by 2, instead of subtracting 1.
+Dividing by 2 is the "best" because you will always have 2 search spaces that sum to a "whole"
+serach space (whatever the search space size was at the start of this guess), so the 2 new search
+spaces must sum to the whole. This implies that one of the search spaces is at least half the size
+of the old search space, and binary search allows this "equality" to occur.
+
+QCC:
+- How do we rigorously compare to algorithms in terms of speed; how can we say an algo is truly
+more efficient than another one?
+- Is binary search the fastest searching algorithm? If so, how can it be shown that no others are
+faster?
+
+***/
+
 /**
    class BinSearch
    Binary search on array of Comparables
