@@ -1,5 +1,5 @@
 /*
-TNPG: Pseb & Co (Andrew Piatesky, Paul Serbanescu, Joseph Othman) and Burnt Peanut
+TNPG: Pserb & Co (Andrew Piatesky, Paul Serbanescu, Joseph Othman) and Burnt Peanut
 APCS
 HW49 - Be More Rational
 2021-12-22

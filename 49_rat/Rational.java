@@ -1,18 +1,22 @@
 /*
 TNPG: Pseb & Co (Andrew Piatesky, Paul Serbanescu, Joseph Othman) and Burnt Peanut
 APCS
-HW42 - Be More Rational
-2021-12-6
-time spent: 25min
-
+HW49 - Rational Standards Compliance
+2021-12-22
+time spent: 15min
 DISCOVERIES:
-A rational number is actually a number that can be expressed by a ratio of integers.
-this() has to go in the first line of a overloaded constructor, never encountered that before.
-
+- In order to make class Rational comply with the interface Comparable, we needed to
+create a new compareTo method and a new equals method that would take in any object,
+not just a Rational class.
+- We used the boolean instanceof to determine whether or not the input class was a
+Rational. If not, we printed a message to the user, and if not, we proceeded to
+utilize the previously existing compareToHelper method to compare Rationals with one another.
+- We also called the compareToHelper when writing our equals method.
 QUESTIONS:
-How might we use the compareTo method to generate equivalent representations of the same rational number?
-Can we generate a 2D-array of length N to generate all rationals with numerator, denominator at most N? Making N large would allow us
-to generate many rationals without needing many instances of class Rational.
+- Could we use the try and catch methods in order to catch the exception of whenever the
+input object did not have the correct variable type, instead of appealing to the built-in
+instanceof?
+- Where else is compliance present in Java, outside of a class implementing an interface?
 */
 
 public class Rational implements Comparable {
