@@ -115,8 +115,7 @@ public class Rational implements Comparable {
       if (x instanceof Rational) {
         return compareToHelper((Rational) x);
       } else {
-        System.out.println("you cray, that not a rational!");
-        return -1;
+        throw new ClassCastException("you cray, that not a rational!");
       }
     }
 

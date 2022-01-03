@@ -17,7 +17,12 @@ public class Driver {
     System.out.println(jhonny.compareTo(j2nny)); // print 0
     System.out.println(jhonny.compareTo(jeff)); // print -1
     System.out.println("\nComparing Rational to non-Rational Comparable...");
-    System.out.println(jhonny.compareTo(omg)); // print omg u cray, -1;
+    // System.out.println(jhonny.compareTo(omg)); 
+    // print
+    /* Exception in thread "main" java.lang.ClassCastException: you cray, that not a rational!
+        at Rational.compareTo(Rational.java:118)
+        at Driver.main(Driver.java:20)
+    */
 
     System.out.println("\nTesting our .equals(Object) method...");
     System.out.println(jhonny.equals(j2nny)); // print true
