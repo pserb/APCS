@@ -93,17 +93,7 @@ public class BubbleSort
   public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
   {
     ArrayList<Comparable> output = input;
-    for (int i = 0; i < output.size(); i++) {
-      for (int j = output.size()-1; j > i; j--) {
-        Comparable p1 = output.get(j);
-        Comparable p2 = output.get(j-1);
-
-        if (p1.compareTo(p2) < 0) {
-          output.set(j, p2);
-          output.set(j-1, p1);
-        }
-      }
-    }
+    bubbleSortV(output);
     return output;
   }
 
