@@ -1,24 +1,37 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// PSerb & Co. Paul Serbanescu, Andrew Piatetsky, Joseph Othman
+// APCS pd7
 // HW51 -- implementing bubblesort
 // 2022-01-04t
-// time spent:  hrs
+// time spent: 0.6 hrs
 
 /******************************
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
  *
  * ALGO:
- * 
+ - Starting from the final 2 elements in the given ArrayList and traversing downwards
+ (to the left), compare each pair of adjacent elements. Swap 2 adjacent elements if
+ the element on the left is larger than the element on the right.
+ - Then, repeat this, decreasing the number of "checked" pairs by 1. (Starting from
+ the rightmost pair, compare each pair of consecutive elements traversing downwards,
+ except for the final pair on the left.)
+ - Continue to decrease the number of pairs checked by 1 until this becomes 0.
+ }
+ *
  * DISCO
+ - Using this bubbleSort, given an ArrayList of n elements, we can sort the ArrayList
+ in at most (n)(n-1)/2 checks of adjacent elements (you can subtract 1 to account for
+ knowing that the last element is in its desired location by the process of elimination,
+ but we disregard this, since as n gets large, this extra check becomes negligible).
+ -
  *
  * QCC
  * q0: If a pass requires no swaps, what do you know?
- * a0: We win
+ * a0: The ArrayList is already sorted.
  * q1: After pass p, what do you know?
- * a1: 
+ * a1: The first p elements in the ArrayList are sorted.
  * q2: How many passes are necessary to completely sort?
- * a2: 
- * 
+ * a2: For an ArrayList of size n, we need n-1 passes to completely sort the ArrayList.
+ *
  ******************************/
 
 import java.util.ArrayList;
@@ -77,16 +90,28 @@ public class BubbleSort
   // ArrayList-returning bubbleSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
-  // public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
-  // {
-  //   /* YOUR IMPLEMENTATION HERE */
-  // }
+  public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
+  {
+    ArrayList<Comparable> output = input;
+    for (int i = 0; i < output.size(); i++) {
+      for (int j = output.size()-1; j > i; j--) {
+        Comparable p1 = output.get(j);
+        Comparable p2 = output.get(j-1);
+
+        if (p1.compareTo(p2) < 0) {
+          output.set(j, p2);
+          output.set(j-1, p1);
+        }
+      }
+    }
+    return output;
+  }
 
 
   public static void main( String [] args )
   {
 
-    /*===============for VOID methods=============*/
+    /*===============for VOID methods=============
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -101,9 +126,9 @@ public class BubbleSort
       System.out.println( "ArrayList coco before sorting:\n" + coco );
       bubbleSortV(coco);
       System.out.println( "ArrayList coco after sorting:\n" + coco );
-      /*============================================*/
+      ============================================*/
 
-    /*==========for AL-returning methods==========
+    /*==========for AL-returning methods==========*/
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -112,18 +137,18 @@ public class BubbleSort
       glen.add(3);
       System.out.println( "ArrayList glen before sorting:\n" + glen );
       ArrayList glenSorted = bubbleSort( glen );
-      System.out.println( "sorted version of ArrayList glen:\n" 
+      System.out.println( "sorted version of ArrayList glen:\n"
       + glenSorted );
       System.out.println( "ArrayList glen after sorting:\n" + glen );
 
       ArrayList coco = populate( 10, 1, 1000 );
       System.out.println( "ArrayList coco before sorting:\n" + coco );
       ArrayList cocoSorted = bubbleSort( coco );
-      System.out.println( "sorted version of ArrayList coco:\n" 
+      System.out.println( "sorted version of ArrayList coco:\n"
       + cocoSorted );
       System.out.println( "ArrayList coco after sorting:\n" + coco );
       System.out.println( coco );
-      ============================================*/
+      /*============================================*/
 
   }//end main
 
