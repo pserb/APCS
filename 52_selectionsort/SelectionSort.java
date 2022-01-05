@@ -1,25 +1,26 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Paul Serbanescu
+// APCS pd7
 // HW52 -- implementing selection sort
 // 2022-01-05w
-// time spent:  hrs
+// time spent: 0.4 hrs
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
  *
  * ALGO:
- * 
+ * 1. Assign biggest number to right-most index 2. Traversing left put the biggest number to the right 3. Repeat
  * DISCO
- *
+ You can achieve step 1 without doing anything seperate from the rest
+ The power of DIAGNOSTIC PRINT STATEMENTS
  * QCC
  * q0: How many passes to sort n elements?
- * a0: 
+ * a0: n-1
  * q1: What do you know after pass p?
- * a1: 
+ * a1: p items starting from the right are in the right spot
  * q2: How do you know if sorted?
- * a2:
+ * a2: You have done n-1 passes
  * q3: What does a pass boil down to?
- * a3: 
+ * a3: Finding the biggest number to the right of the selection
  ******************************/
 
 
