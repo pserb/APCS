@@ -64,7 +64,7 @@ public class StatPrinter
   //          _frequency.get(i) returns frequency of i in data
   //eg, for data [2,3,2,5,2,3]
   //  _frequency would be [0,0,3,2,0,1]
-  // O(2n)
+  // O(n)
   public StatPrinter( ArrayList <Integer> data )
   {
     /* YOUR IMPLEMENTATION HERE */
@@ -107,6 +107,7 @@ public class StatPrinter
   //    isLocalMode(0) -> false
   //    isLocalMode(1) -> true
   //    isLocalMode(5) -> true
+  // O(1) - data insensitive
   public boolean isLocalMode( int i )
   {
     /* YOUR IMPLEMENTATION HERE */
@@ -120,6 +121,7 @@ public class StatPrinter
 
   //*************** QUESTION 04 **************************
   //postcond: returns list of modes in _frequency
+  // O(n)
   public ArrayList<Integer> getLocalModes()
   {
     /* YOUR IMPLEMENTATION HERE */
@@ -130,27 +132,30 @@ public class StatPrinter
       }
     }
     return modes;
-
   }
 
 
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
+  // O(n^2)
   public void printHistogram( int longestBar )
   {
     /* YOUR IMPLEMENTATION HERE */
     Integer maxVal = max(_frequency);
     double ratio = (double)maxVal / longestBar;
+    int ctr = 0;
 
     for (int i = 0; i < _frequency.size(); i++) {
       System.out.print(i + ": ");
       double temp = (double)_frequency.get(i);
       while (temp > 0) {
         System.out.print("*");
+        ctr++;
         temp -= ratio;
       }
       System.out.println();
     }
+    System.out.println(ctr);
   }
 
 }//end class StatPrinter
