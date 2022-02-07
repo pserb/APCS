@@ -1,25 +1,25 @@
-Team Phantom Tollbooth (Clyde Sinclair, Fierce Dragon)
-APCS pd0
+Fred -- Paul Serbanescu, Hugo Jenkins, Brian Kang
+APCS pd6
 L05 -- pulling it together
 2022-02-03r
-time spent:  hrs
+time spent: 0.75 hrs + class
 
 
 DISCO
 ------------------------------------------------
-* 
+* A local mode is when a value is greater than both the prior and the next values
 ================================================
 
 
 QCC
 ------------------------------------------------
-* 
+* What should we do when all of the values in _frequency are not divisible by longestBar? How do we keep accuracy while rounding?
+* In what situation would a histogram be the best way to portray information?
+* Are there better ways to make charts and graphs in java like there is in Python?
 ================================================
 
 
 MISC
 ------------------------------------------------
-* 
+*
 ================================================
-
-
