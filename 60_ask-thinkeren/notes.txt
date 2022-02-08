@@ -1,0 +1,28 @@
+Fred -- Hugo Jenkins, Paul Serbanescu, Brian Kang
+APCS pd6
+HW60 -- A Termite is-a Turtle, a Thinker is-a Turtle
+2022-02-07
+time spent:
+
+Sorting Algorithm:
+0) If your list has more than one item, split it in half and give each half to a new Thinker
+1) If your list has only one item, place it on the unoccupied hand of the Thinker who gave you the item
+2) When you recieve back the items that you gave away, sort them using the mergesort algorithm and hand that new sorted list to whoever gave you the items
+
+Mergesort algorithm:
+0) Compare the first items of the two lists
+1) Add the lower one to the new list and remove it from the list from which it was taken
+2) Repeat until all of the items are in the new list
+
+Observables:
+* Thinkeren struggled to keep it organized
+* Assume that the list is only sorted when it only has one item
+* Our class did not have enough people for everyone to have just one card
+
+DISCO:
+* Yet another sort algorithm, mergesort
+* The idea of individual cells or "turtles" following extremely simple directions to complete a task
+
+QCC:
+* How does this algorithm play into to the efficieny that we talked about in the beginning of class? Avoiding O(n^2)?
+* Thinkeren had trouble remembering where they got their items from, how can we keep track of where items come from in a code?
