@@ -1,0 +1,37 @@
+Paul Serbanescu + Jeffery Tang
+APCS
+HW61--Instructions so Simple...
+2022-02-08
+time spent: .8 hrs
+
+Observables
+-When a thinkerens has one card, it is sorted. Else, it is not sorted.
+-In the start, Thinkerens give out all their cards to two people.
+-Those two people proceed to the same thing until everyone has either 1 or 2 cards.
+-Those who had one card gave the cards to the person who gave them the card.
+-That person would then order it and give it to the person who gave it to them.
+-The person who now has no cards would raise their hand to get more cards to sort.
+
+Clean up the Process
+To clean up this process, thinkerens can better split the cards into two more equal decks.
+
+Sections:
+
+DISCO
+If stack is already sorted. you do not give to the people under you.
+
+QCC
+What makes this more efficient than prior sorting algorithms?
+Is it more efficient to check if a stack is already sorted or sort it?
+
+THINKER FIRMWARE (Instructions each turtle follows)
+If stack at any time is already sorted, you can only give back, and not give away.
+When you have > 1 card, give two people half your amount of cards each.
+When you have = 1 card, give card to person who gave you card.
+When you have = 0 card, raise hand to get more cards.
+When you receive > 1 card, sort.
+
+Sorting: Compare first indices of both stacks. Compare. Smaller value is now
+added to the end of merged stack. Remove that value from its original array.
+Repeat until both originals stacks are empty. If one stack is empty, while the other
+is not, simply add the rest of the nonempty array into the end of the merged array.
