@@ -1,0 +1,45 @@
+Activity 1
+1a) public static double sentimentVal( String word )
+1b) It requires a String. If you do not put a String input, it will throw an
+    error (incorrect type).
+1c) It returns a double.
+
+2)  sentimentVal("accidental") -> -2.07
+    sentimentVal("account") -> 0.64
+    sentimentVal("acceptable") -> -0.12
+
+3a) It will compile because "warm" is a string and the parameter is a string.
+3b) It will not compile because 0.5 is a double, not a string, so it does not
+    parameter requirements.
+3c) It will not compile because the parameter is one string, not two.
+
+Activity 2
+4)  In totalSentiment, I used textToString to convert a file into strings. I then
+    turned these strings into an array using split. I then used a for loop to iterate
+    through all the words and added their sentiment value into the final answer.
+5a) Not really because negative sentiment should not impact postitive sentiment.
+5b) It should negate the negative sentiments or the positive ones, so all sentiment
+    are kept track of.
+6)  The student has no if statement catching totalSentiments greater or equal to 15.
+    The greatest totalSentiment this student would be able to catch is 14, which is
+    the first if statement. Logically, the greater the totalSentiments, the greater
+    the starRating, but anything totalSentiment greater than 14 would return 0 in
+    this case, since these totalSentiment values are only caught by the last else
+    statement.
+
+Activity 3
+
+3) Substring returns only a portion of the given String, within the start index and the end index.
+   You have to add 1 because start index is inclusive, and you don't want to include (copy) the last letter
+   of the previous part.
+5) Static methods can be called inside the main method directly whereas nonstatic ones cannot. Nonstatic
+   methods must be an instance of an object and relate only to that instance. In way static methods are "global."
+6) Inside fakeReview, instead of calling randomAdjective(), we can call randomPositiveAdjective() or 
+   randomNegativeAdjective() depending on what kind of review we want to make.
+
+Activity 4
+
+1) If we want to decieve everyone and become villans
+2) If we are good people and liked the food / want to boost our friend's pizza restaurant.
+3) We would chose the words with the most extreme sentiment values. If we wanted a negative review, we
+can restrict it to only adjectives with sentiment values less than -1, and greater than 1 for positive reviews. 
