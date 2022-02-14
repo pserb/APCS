@@ -1,3 +1,12 @@
+/* 
+IDK (Paul Serbanescu, May Qiu, Jeffery Tang)
+APCS
+L06 -- Reviews
+2022-02-13
+time spent: 4 hrs
+*/
+
+
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;

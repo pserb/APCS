@@ -1,3 +1,11 @@
+/* 
+IDK (Paul Serbanescu, May Qiu, Jeffery Tang)
+APCS
+L06 -- Reviews
+2022-02-13
+time spent: 4 hrs
+*/
+
 Activity 1
 1a) public static double sentimentVal( String word )
 1b) It requires a String. If you do not put a String input, it will throw an
@@ -46,3 +54,10 @@ can restrict it to only adjectives with sentiment values less than -.5, and grea
 5) oneWord would consist of the original String from its first index to its last.
 6) The * character would cause the adjective to not be recognized.
 7) We can restrict the method to only allow adjectives from randomAdjective() with sentimental values above .5.
+
+Activity 5
+1) We decided to implement this program because it expanded on elements of previous activities.
+2) We struggled with arrays a lot, but later realized that ArrayLists worked far better for our program.
+3) public static ArrayList<String> restaurantRanker(String fileName)
+    This method is static because we wanted it to be able to be used from the main method of the file, which can only deal with static methods / variables.
+    We use a String parameter so we can use our Reviews.txt (or others if we make them) file to rank the best restaurants from them based on the positivity of the reviews.

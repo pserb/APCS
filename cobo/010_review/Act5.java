@@ -1,106 +1,122 @@
+/* 
+IDK (Paul Serbanescu, May Qiu, Jeffery Tang)
+APCS
+L06 -- Reviews
+2022-02-13
+time spent: 4 hrs
+*/
+
 import java.io.*;
 import java.util.*;
 
 public class Act5 {
 
-  public static String restaurantRanker(String fileName) {
-    String[] negAdj = importList("negativeAdjectives.txt", 29);
-    String[] posAdj = importList("positiveAdjectives.txt", 29);
-    String[] ans = new String[7];
-    String[][] temp2 = new String[7][];
+  public static ArrayList<String> restaurantRanker(String fileName) {
+    // returns ArrayList of best -> worst restaurants
+
+    ArrayList<String> negAdj = importList("negativeAdjectives.txt");
+    ArrayList<String> posAdj = importList("positiveAdjectives.txt");
+
     String reviews = textToString(fileName);
-    String[][] words = new String[7][];
-    String[] temp = reviews.split("-");
-    String[] d = {" ", " "};
-    for (int i=0 ; i < 7; i++) {
-      words[i] = (temp[i]).split(" ");
+
+    String[] splitReviews = reviews.split("-");
+
+    ArrayList<Integer> values = new ArrayList<>();
+    ArrayList<String> restaurantNames = new ArrayList<>();
+
+    for (int i = 0; i < splitReviews.length; i++) {
+      String[] temp = splitReviews[i].split(" ");
+      restaurantNames.add(temp[0]);
+
+      for (int j = 0; j < temp.length; j++) {
+        temp[j] = removePunctuation(temp[j]);
       }
-      System.out.println(words[1][0]);
-    for (int x=0; x <temp2.length;x++){
-      temp2[x]= d;
-    }
-    System.out.println(Arrays.toString(words));
-    for(int x = 0; x < words.length; x++) {
-      // System.out.println(x);
-      int y = x;
-      // System.out.println(words[x][0]);
-      temp2[y][0] = words[x][0];
-      System.out.println(temp2[0][0]);
-    }
-    System.out.println("yes");
-    System.out.println(temp2[0][0]);
-    for(int i = 0; i < words.length; i++) {
-      System.out.println(temp2[0][0]);
-      int counter =0;
-      for(int j = 0; j < words[i].length; j++) {
-        if(helper(words[i][j], posAdj)) {
-          counter++;
-        }
-        else if(helper(words[i][j], negAdj)) {
-          counter--;
+      // System.out.println(Arrays.toString(temp));
+
+      int value = 0;
+      for (String word : temp) {
+        if (posAdj.indexOf(word) > -1) {
+          value++;
+        } else if (negAdj.indexOf(word) > -1) {
+          value--;
         }
       }
-      temp2[i][1] = "" + counter;
-      System.out.println(temp2[0][0]);
-      }
-      for(int x=0;x<temp2.length;x++) {
-        int largest = 0;
-        for(int i=0;i<temp2.length;i++) {
-          System.out.println(temp2[0][0]);
-          if (Integer.parseInt(temp2[i][1]) > Integer.parseInt(temp2[largest][1])) {
-            largest = i;
-          }
-          // System.out.println(temp2[i][0]);
-          // System.out.println(Integer.parseInt(temp2[largest][1]));
+      // System.out.println("Value for review " + i + ": " + value);
+      values.add(value);
+    }
+
+    // System.out.println(values);
+    // System.out.println(restaurantNames);
+
+    ArrayList<String> orderedRestaruants = new ArrayList<>();
+
+    for (int magic = 0; magic < splitReviews.length; magic++) {
+      int largest = values.get(0);
+      for (int i = 0; i < values.size(); i++) {
+        if (values.get(i) > largest) {
+          largest = values.get(i);
         }
-        ans[x]=temp2[largest][0];
-        temp2[largest][1]="-359";
       }
-    return Arrays.toString(ans);
+
+      int index = values.indexOf(largest);
+      // System.out.println("Index: " + index);
+      orderedRestaruants.add(restaurantNames.get(index));
+      // System.out.println(orderedRestaruants);
+
+      values.remove(index);
+      restaurantNames.remove(restaurantNames.get(index));
+    }
+
+    return orderedRestaruants;
   }
 
-  public static boolean helper(String a, String[] b) {
-    for(int i = 0; i < b.length ; i++) {
-      if(a.equals(b[i])){
-        return true;
+  public static ArrayList<String> importList(String a) {
+    ArrayList<String> list = new ArrayList<>();
+    try {
+      Scanner x = new Scanner(new File(a));
+      while (x.hasNextLine()) {
+        list.add(x.nextLine());
       }
+      x.close();
+    } catch (FileNotFoundException t) {
     }
-    return false;
+    return list;
   }
-  public static String[] importList(String a, int b){
-    int counter = 0;
-    String[] list = new String[b];
-    try{
-    Scanner x = new Scanner(new File(a));
-    while(x.hasNextLine()){
-      list[counter] = x.nextLine();
-      counter++;
-    }
-    x.close();
-  }catch(FileNotFoundException t){
-  }
-  return list;
-}
-public static String textToString( String fileName )
-{
-  String temp = "";
-  try {
-    Scanner input = new Scanner(new File(fileName));
 
-    //add 'words' in the file to the string, separated by a single space
-    while(input.hasNext()){
-      temp = temp + input.next() + " ";
-    }
-    input.close();
+  // from review
+  public static String textToString(String fileName) {
+    String temp = "";
+    try {
+      Scanner input = new Scanner(new File(fileName));
 
+      // add 'words' in the file to the string, separated by a single space
+      while (input.hasNext()) {
+        temp = temp + input.next() + " ";
+      }
+      input.close();
+
+    } catch (Exception e) {
+      System.out.println("Unable to locate " + fileName);
+    }
+    // make sure to remove any additional space that may have been added at the end
+    // of the string.
+    return temp.trim();
   }
-  catch(Exception e){
-    System.out.println("Unable to locate " + fileName);
+
+  // from review
+  public static String removePunctuation(String word) {
+    while (word.length() > 0 && !Character.isAlphabetic(word.charAt(0))) {
+      word = word.substring(1);
+    }
+    while (word.length() > 0 && !Character.isAlphabetic(word.charAt(word.length() - 1))) {
+      word = word.substring(0, word.length() - 1);
+    }
+
+    return word;
   }
-  //make sure to remove any additional space that may have been added at the end of the string.
-  return temp.trim();
-}
+
   public static void main(String[] args) {
+    System.out.println("Restaurants from best to worst: ");
     System.out.println(restaurantRanker("Reviews.txt"));
   }
 }
