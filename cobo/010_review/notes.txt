@@ -61,3 +61,43 @@ Activity 5
 3) public static ArrayList<String> restaurantRanker(String fileName)
     This method is static because we wanted it to be able to be used from the main method of the file, which can only deal with static methods / variables.
     We use a String parameter so we can use our Reviews.txt (or others if we make them) file to rank the best restaurants from them based on the positivity of the reviews.
+4)  while (word.length() > 0 && !Character.isAlphabetic(word.charAt(0))) {
+      word = word.substring(1);
+    }
+    while (word.length() > 0 && !Character.isAlphabetic(word.charAt(word.length() - 1))) {
+      word = word.substring(0, word.length() - 1);
+    }
+
+    return temp.trim();
+
+    the method removePunctuation removes punctuation
+    the method textToString turns a txt file into a String
+
+5)   for (String word : temp) {
+        if (posAdj.indexOf(word) > -1) {
+          value++;
+        } else if (negAdj.indexOf(word) > -1) {
+          value--;
+        }
+      }
+
+      can also be written as:
+      for (String word : temp) {
+        if (negAdj.indexOf(word) > -1) {
+          value++;
+        } else if (posAdj.indexOf(word) > -1) {
+          value--;
+        }
+      }
+      (did u see the difference?!)
+
+6)   for (int j = 0; j < temp.length; j++) {
+        temp[j] = removePunctuation(temp[j]);
+      }
+      this loop loops through an array of words, removing the punctuation from each word in the array
+
+      ArrayList<String> strippedWords = new ArrayList<>();
+      for (String word : temp) {
+          strippedWords.add(removePunctuation(word));
+      }
+      we chose not to do this because we didnt want to create a new array / ArrayList ^
