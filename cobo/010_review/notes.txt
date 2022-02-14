@@ -34,7 +34,7 @@ Activity 3
    of the previous part.
 5) Static methods can be called inside the main method directly whereas nonstatic ones cannot. Nonstatic
    methods must be an instance of an object and relate only to that instance. In way static methods are "global."
-6) Inside fakeReview, instead of calling randomAdjective(), we can call randomPositiveAdjective() or 
+6) Inside fakeReview, instead of calling randomAdjective(), we can call randomPositiveAdjective() or
    randomNegativeAdjective() depending on what kind of review we want to make.
 
 Activity 4
@@ -42,4 +42,7 @@ Activity 4
 1) If we want to decieve everyone and become villans
 2) If we are good people and liked the food / want to boost our friend's pizza restaurant.
 3) We would chose the words with the most extreme sentiment values. If we wanted a negative review, we
-can restrict it to only adjectives with sentiment values less than -1, and greater than 1 for positive reviews. 
+can restrict it to only adjectives with sentiment values less than -.5, and greater than .5 for positive reviews.
+5) oneWord would consist of the original String from its first index to its last.
+6) The * character would cause the adjective to not be recognized.
+7) We can restrict the method to only allow adjectives from randomAdjective() with sentimental values above .5.

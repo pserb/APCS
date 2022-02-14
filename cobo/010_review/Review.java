@@ -201,7 +201,9 @@ public class Review {
     String ans = "";
     for (int i = 0; i < words.length; i++) {
       if (words[i].charAt(0) == '*') {
-        words[i] = randomAdjective();
+        while (sentimentVal(words[i]) > -.5 && sentimentVal(words[i]) < .5) {
+          words[i] = randomAdjective();
+        }
       }
       ans += words[i] + " ";
     }
