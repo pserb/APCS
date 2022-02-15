@@ -1,3 +1,9 @@
+// Team Erm: Ryan Lau and Paul Serbanescu
+// APCS
+// HW64 -- Revisitation
+// 2022-02-15
+// time spent: 0.5 hours
+
 public class SumDigits {
   public static int sumDigits(int n) {
     if (n < 10) return n;
