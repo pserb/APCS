@@ -1,3 +1,11 @@
+/*
+IDK (Paul Serbanescu, May Qiu, Jeffery Tang)
+APCS
+HW65 -- QueenBoard
+2022-02-16
+time spent: .5 hrs
+*/
+
 /***
  * class QueenBoard
  * Generates solutions for N-Queens problem.
@@ -41,7 +49,7 @@ public class QueenBoard
    */
   private boolean solveH( int col )
   {
-    System.out.println(toString());
+    // System.out.println(toString());
     // base case
     if (col >= _board.length) {
       return true;
@@ -85,7 +93,8 @@ public class QueenBoard
   //================= YE OLDE SEPARATOR =================
 
   /***
-   * <General description>
+   * addQueen adds a queen to the inputted space, making its value 1, and sets the values of spaces to its right,
+   diagonally up right, and diagonally down right to 1 less
    * precondition: space is equal to 0
    * postcondition: queen is placed (set value to 1), proper adjacent spaces decremented by one
    */
@@ -111,7 +120,8 @@ public class QueenBoard
 
 
   /***
-   * <General description>
+   * removeQueen removes a queen from the inputted space, making its value 0, and sets the values of spaces to its right,
+   diagonally up right, and diagonally down right to 1 more
    * precondition: space is equal to 1
    * postcondition: sets space to 0, increments proper adjacent spaces by 1
    */
@@ -157,7 +167,13 @@ public class QueenBoard
   //main method for testing...
   public static void main( String[] args )
   {
-    QueenBoard b = new QueenBoard(4);
+    QueenBoard a = new QueenBoard(2);
+    System.out.println(a.solve());
+    QueenBoard c = new QueenBoard(4);
+    System.out.println(c.solve());
+    QueenBoard d = new QueenBoard(8);
+    System.out.println(d.solve());
+    QueenBoard b = new QueenBoard(5);
     System.out.println(b.solve());
 
 

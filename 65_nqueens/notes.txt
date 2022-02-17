@@ -1,0 +1,13 @@
+IDK (Paul Serbanescu, May Qiu, Jeffery Tang)
+APCS
+HW65 -- QueenBoard
+2022-02-16
+time spent: .4 hrs
+
+DISCO:
+* The algorithm will attempt to place the first queen in a lower row if placing
+it on the top left space fails to create a solution.
+
+QCC:
+* How can we alter the algorithm to create show all solutions if a board has multiple solutions?
+* How would the algorithm change if the first queen was placed at a different corner of the board?
