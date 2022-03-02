@@ -1,8 +1,10 @@
-// Clyde Sinclair
-// APCS pd0
-// HW68 -- recursively probing for a closed cycle
-// 2022-02-28m
-// time spent:  hrs
+/*
+IDK (Paul Serbanescu, May Qiu, Jeffery Tang)
+APCS
+HW68 -- Knight Tour Code
+2022-03-01
+time spent: 1 hrs
+*/
 
 /***
  * SKELETON
@@ -15,21 +17,29 @@
  * $ java KnightTour [N]
  *
  * ALGO
- *
+ * Knight starts at a space and moves either vertically by 2 and horizontally by 1 or
+ vertically by 1 and horizontally by 2 until the value of the current space is equal
+ to 1 less than the number of spaces
+ * Set current space to 0 and back up to previous position if all paths lead to failure.
  * DISCO
- *
+ * KnightTour on a 4x4 board is not possible
+ * Times are very close when executing on a board of the same size
  * QCC
- *
+ * What would the Big O notation be for KnightTour?
  * Mean execution times for boards of size n*n:
- * n=5   __s    across __ executions
- * n=6   __s    across __ executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   1.648s    across 3 executions
+ * n=6   24.755s    across 3 executions
+ * n=7   N/As    across N/A executions
+ * n=8   N/As    across N/A executions
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
  *
  ***/
+
+
+import java.io.*;
+import java.util.*;
 
 
 public class KnightTour
@@ -60,8 +70,8 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
-    //int startY = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
+    //int startX = int ((math.random()*n)-1);
+    //int startY = int ((math.random()*n)-1);
     //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
