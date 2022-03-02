@@ -32,10 +32,6 @@
  ***/
 
 
-import java.io.*;
-import java.util.*;
-
-
 public class KnightTour
 {
   public static void main( String[] args )
@@ -84,22 +80,22 @@ class TourFinder
   //instance vars
   private int[][] _board;
   private int _sideLength; //board has dimensions n x n
-  private boolean _solved = ???
+  private boolean _solved = false;
 
   //constructor -- build board of size n x n
   public TourFinder( int n )
   {
-    _sideLength = n + 4;
+    _sideLength = n;
 
     //init 2D array to represent square board with moat
-    _board = new int[_sideLength][_sideLength];
+    _board = new int[_sideLength + 4][_sideLength + 4];
 
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    for (int row = 0; row < _sideLength; row++) {
-      for (int col = 0; col < _sideLength; col++) {
-        if (row <= 1) || (row >= _sideLength - 2) || (col <= 1) || (col >= _sideLength - 2) {
+    for (int row = 0; row < _board.length; row++) {
+      for (int col = 0; col < _board.length; col++) {
+        if ((row <= 1) || (row >= _board.length - 2) || (col <= 1) || (col >= _board.length - 2)) {
           _board[row][col] = -1;
         } else {
           _board[row][col] = 0;
@@ -158,16 +154,16 @@ class TourFinder
     //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( ??? ) System.exit(0);
+    if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( ??? ) {
-      ???
+    if ( moves == _sideLength * _sideLength + 1 ) {
+      _solved = true;
       System.out.println( this ); //refresh screen
       return;
     }
     //other base case: stepped off board or onto visited cell
-    if ( ??? ) {
+    if ( _board[x][y] != 0 ) {
       return;
     }
     //otherwise, mark current location
@@ -175,11 +171,11 @@ class TourFinder
     else {
 
       //mark current cell with current move number
-      _board[x][y] = ???
+      _board[x][y] = moves;
 
       System.out.println( this ); //refresh screen
 
-      //delay(1000); //uncomment to slow down enough to view
+      // delay(10); //uncomment to slow down enough to view
 
       /******************************************
        * Recursively try to "solve" (find a tour) from
@@ -190,11 +186,18 @@ class TourFinder
        *     g . . . b
        *     . h . a .
       ******************************************/
-      ???
+      findTour(x+1, y+2, moves+1);
+      findTour(x+2, y+1, moves+1);
+      findTour(x+2, y-1, moves+1);
+      findTour(x+1, y-2, moves+1);
+      findTour(x-1, y-2, moves+1);
+      findTour(x-2, y-1, moves+1);
+      findTour(x-2, y+1, moves+1);
+      findTour(x-1, y+2, moves+1);
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
-        ???
+        _board[x][y] = 0;
 
       System.out.println( this ); //refresh screen
     }
