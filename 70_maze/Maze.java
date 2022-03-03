@@ -131,6 +131,8 @@ class MazeSolver
 
     //primary base case
     if ( _solved ) {
+      cleanup();
+      System.out.println( this );
       System.exit(0);
     }
     //other base cases
@@ -160,9 +162,20 @@ class MazeSolver
   }
 
   //accessor method to help with randomized drop-in location
-  // public boolean onPath( int x, int y) {
-  //
-  // }
+  public boolean onPath( int x, int y) {
+    return _maze[x][y] == PATH;
+  }
+
+  //method to loop thru maze and remove all @ when maze is solved
+  public void cleanup() {
+    for (int r = 0; r < _maze.length-1; r++) {
+      for (int c = 0; c < _maze[0].length-1; c++) {
+        if (_maze[r][c] == HERO) {
+          _maze[r][c] = VISITED_PATH;
+        }
+      }
+    }
+  }
 
 }//end class MazeSolver
 
@@ -192,10 +205,18 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    // ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
+    for (int i = 0; i < 80 * 25; i++) {
+      int startX = (int) (Math.random() * 80);
+      int startY = (int) (Math.random() * 25);
+      if (ms.onPath(startX, startY)) {
+        ms.solve(startX, startY);
+        break;
+      }
+    }
     //ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
