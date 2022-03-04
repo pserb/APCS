@@ -15,7 +15,17 @@
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
+ *  |-----------|
+ *  | _ | b | _ |
+ *  | c | x | a |
+ *  | _ | d | _ |
+ *  |-----------|
+ *  First the hero sees if the right is a possible next move (a), if it is then it moves to the right, if not it checks up (b)
+ *  Next it checks if it can go up (b), if that's possible it goes up and recurses, if not checks left (c)
+ *  Next it checks if it can go to the left (C), if that's possible it moves to the left, if not it checks the bottom (d)
+ *  Finally, the hero checks if it can go down (d), if it can it goes down, 
+ *    - if not it realizes that there are no more moves left and then recursively backtracks to the last point of intersection (a point where there is another possible place to turn)
+ *    - on its way back it leaves a "crumb  trail" of zeros so that it knows where it has checked for a path before.
  *
  * DISCO
  *
