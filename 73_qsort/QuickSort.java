@@ -69,30 +69,18 @@ public class QuickSort extends Partition
    */
   public static void qsort( int[] d )
   {
-    if (d.length == 1) {
-      return;
-    }
-
-    int part = fastSelect(d, d.length / 2);
+    sort(d, 0, d.length-1);
   }
 
   //you may need a helper method...
-  public static int fastSelect(int[] arr, int ySmall){
+  public static int[] sort( int[] arr, int low, int high ) {
+    if (low < high) {
+      int pt = partition(arr, low, high, (low+high)/2);
 
-    int part = partition(arr, 0, arr.length - 1, 0);
-    ySmall --; //the nth smallest element has index n - 1
-    while(ySmall != part){
-      //partition before target
-      if (ySmall > part){
-        part = partition(arr, part, arr.length - 1, part + 1); //would setting the a value to 0 work?
-      }
-      //partition after target
-      else{
-        part = partition(arr, 0, part, 1);
-      }
+      sort(arr, low, pt-1);
+      sort(arr, pt+1, high);
     }
-    return arr[part];
-
+    return arr;
   }
 
 
@@ -107,7 +95,6 @@ public class QuickSort extends Partition
     System.out.println("\narr1 init'd to: " );
     printArr(arr1);
 
-    System.out.println(fastSelect(arr1, 2));
     qsort( arr1 );
     System.out.println("arr1 after qsort: " );
     printArr(arr1);
@@ -131,33 +118,33 @@ public class QuickSort extends Partition
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
-
+    
     //get-it-up-and-running, static test case w/ dupes:
     int [] arr2 = {7,1,5,12,3,7};
     System.out.println("\narr2 init'd to: " );
     printArr(arr2);
-
+    
     qsort( arr2 );
     System.out.println("arr2 after qsort: " );
     printArr(arr2);
-
-
+    
+    
     // arrays of randomly generated ints
     int[] arrMatey = new int[20];
     for( int i = 0; i < arrMatey.length; i++ )
     arrMatey[i] = (int)( 48 * Math.random() );
-
+    
     System.out.println("\narrMatey init'd to: " );
     printArr(arrMatey);
-
+    
     shuffle(arrMatey);
     System.out.println("arrMatey post-shuffle: " );
     printArr(arrMatey);
-
+    
     qsort( arrMatey );
     System.out.println("arrMatey after sort: " );
     printArr(arrMatey);
+    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main
