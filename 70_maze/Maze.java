@@ -46,6 +46,8 @@ class MazeSolver
   private int h, w; // height, width of maze
   private boolean _solved;
 
+  int startX, startY;
+
   //~~~~~~~~~~~~~  L E G E N D  ~~~~~~~~~~~~~
   final private char HERO =           '@';
   final private char PATH =           '#';
@@ -135,7 +137,7 @@ class MazeSolver
    * @param x starting x-coord, measured from left
    * @param y starting y-coord, measured from top
    **/
-  public void solve( int x, int y )
+  public void solve( int x, int y)
   {
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
@@ -143,6 +145,8 @@ class MazeSolver
     if ( _solved ) {
       cleanup();
       System.out.println( this );
+      System.out.println("start pos: " + startX + ", " + startY);
+      System.out.println("exit: " + findExit()[0] + ", " + findExit()[1]);
       System.exit(0);
     }
     //other base cases
@@ -187,6 +191,23 @@ class MazeSolver
     }
   }
 
+  public int[] findExit() {
+    int[] ans = new int[2];
+    for (int r = 0; r < _maze.length-1; r++) {
+      for (int c = 0; c < _maze[0].length-1; c++) {
+        if (_maze[r][c] == EXIT) {
+          ans[0] = r;
+          ans[1] = c;
+        }
+      }
+    }
+    return ans;
+  }
+
+  public void quickestPath( int x, int y ) {
+
+  }
+
 }//end class MazeSolver
 
 
@@ -219,15 +240,18 @@ public class Maze
 
     //drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    for (int i = 0; i < 80 * 25; i++) {
-      int startX = (int) (Math.random() * 80);
-      int startY = (int) (Math.random() * 25);
-      if (ms.onPath(startX, startY)) {
-        ms.solve(startX, startY);
-        break;
-      }
+    Random random = new Random();
+
+    ms.startX = random.nextInt(80);
+    ms.startY = random.nextInt(25);
+    while ( !ms.onPath(ms.startX, ms.startY) ) {
+      ms.startX = random.nextInt(80);
+      ms.startY = random.nextInt(25);
     }
-    //ms.solve( startX, startY );
+
+    System.out.println(ms.startX + ", " + ms.startY);
+    ms.solve( ms.startX, ms.startY );
+    ms.quickestPath( ms.startX, ms.startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()

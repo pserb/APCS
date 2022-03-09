@@ -22,7 +22,7 @@ public class Mysterion {
   //preconditions: start = 0, end = final index, wall = index of the "wall"
   //postconditions: ArrayList will be set to have values less than the "wall" to its left and have
   //values greater than the "wall" to its right.
-  values to its right are greater than it.
+  //values to its right are greater than it.
   public static void GreatWallOfChina(ArrayList<Integer> arr, int start, int end, int wall) {
     // System.out.println("Starting array: " + arr);
     int temp;
