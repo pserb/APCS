@@ -80,7 +80,9 @@ public class QuickSort extends Partition
   public static int[] sort( int[] arr, int low, int high ) {
     if (low < high) {
       int pt = partition(arr, low, high, (low+high)/2);
-
+      System.out.println("\n low: " + low + " high: " + high);
+      printArr(arr);
+	
       sort(arr, low, pt-1);
       sort(arr, pt+1, high);
     }
