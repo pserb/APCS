@@ -95,7 +95,7 @@ public class LList implements List //interface def must be in this dir
     return rmNode.getCargo();
   }
 
-  public void insert( String newVal, int index ) {
+  public void add( String newVal, int index ) {
     LLNode tmp = _head;
     for( int i=0; i < index-1; i++ )
       tmp = tmp.getNext();
@@ -154,7 +154,7 @@ public class LList implements List //interface def must be in this dir
     james.remove(2); //remove a
     System.out.println( james );
 
-    james.insert("JASDKASDA", 1);
+    james.add("JASDKASDA", 1);
     System.out.println( james );
   }
 
