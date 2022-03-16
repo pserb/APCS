@@ -1,3 +1,9 @@
+// WON (Brian, Paul, Ethan)
+//APCS
+//HW 77 -- Insert Remove -- Linked Lists
+//2020--03--15
+//time spent: .2 hours
+
 /***
  * interface List
  * subset of actual Java List interface

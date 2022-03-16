@@ -1,13 +1,17 @@
-// Clyde Sinclair
-// APCS pd0
-// HW76 -- implement linked list
-// 2022-03-14m
-// time spent:  hrs
+// WON (Brian, Paul, Ethan)
+//APCS
+//HW 77 -- Insert Remove -- Linked Lists
+//2020--03--15
+//time spent: .2 hours
 
 
 /***
  * class LList
  * Implements a linked list of LLNodes, each containing String data
+ * 
+ *  ALGOS:
+ * Ins: Walk to location, and couple in the new node inbetween this and the next node.
+ * Rem: Walk to location, and recouple prev node to node after deleted node. 
  **/
 
 public class LList implements List //interface def must be in this dir

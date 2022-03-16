@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
-// HW75 -- implement a node for a linked list
-// 2022-03-14m
-// time spent:  hrs
+// WON (Brian, Paul, Ethan)
+//APCS
+//HW 77 -- Insert Remove -- Linked Lists
+//2020--03--15
+//time spent: .2 hours
 
 /***
  * class LLNode
