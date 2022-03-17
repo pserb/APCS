@@ -8,9 +8,8 @@
 
 public class ListTester
 {
-  public static void main( String[] args ) 
+  public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //instantiate... var type List, obj type LList
     List wu = new LList();
@@ -42,19 +41,22 @@ public class ListTester
     System.out.println(wu);
 
     for( int i=0; i<7; i++ ) {
-    int n = (int)( wu.size() * Math.random() );
-    System.out.println("adding a poser at index " + n + "...");
-    wu.add( n, "@" );
-    System.out.println("Updated list: " + wu);
+      int n = (int)( wu.size() * Math.random() );
+      String imposter = "@";
+      System.out.println("adding a poser at index " + n + "...");
+      wu.add( n, imposter );
+      System.out.println("Updated list: " + wu);
     }
 
     while( wu.size() > 0 ) {
-    int n = (int)( wu.size() * Math.random() );
-    System.out.println("deleting node "+ n + "...");
-    wu.remove(n);
-    System.out.println("Updated list: " + wu);
+      int n = (int)( wu.size() * Math.random() );
+      System.out.println("list size currently: " + wu.size());
+      System.out.println("deleting node "+ n + "...");
+      wu.remove(n);
+      System.out.println("Updated list: " + wu);
     }
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
 }//end class

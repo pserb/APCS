@@ -22,7 +22,7 @@ public interface List
   public boolean add( String x );
 
   //insert node at specified index
-  public void add( String x, int index );
+  public void add( int index, String x );
 
   //remove node from list, return its data
   public String remove( int index );
