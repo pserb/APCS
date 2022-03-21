@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -62,6 +64,8 @@ public class Shuffler {
 			shuffled[k] = values[j];
 			k += 2;
 		}
+
+		values = shuffled;
 	}
 
 	/**
@@ -76,6 +80,35 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		// for (int j : values) System.out.print(j + " ");
+
+		int[] shuffled = new int[values.length];
+
+		ArrayList<Integer> vals = new ArrayList<Integer>(values.length);
+
+		for (int i :  values) {
+			vals.add(i);
+		}
+
+		int randIndex = 0;
+
+		int i = 0;
+		while (vals.size() > 0) {
+			
+			randIndex = (int) (Math.random() * vals.size());
+			shuffled[i] = vals.remove(randIndex);
+			i ++;
+		}
+		// for (int j : shuffled) System.out.print(j + " ");
+		values = shuffled;
+		// System.out.println("");
+		// for (int j : values) System.out.print(j + " ");
+
+		// for (int j = 0; j < shuffled.length; j++)  values[j] = shuffled[j];
+
+		// System.out.println("");
+		// for (int j : values) System.out.print(j + " ");
+
+
 	}
 }
