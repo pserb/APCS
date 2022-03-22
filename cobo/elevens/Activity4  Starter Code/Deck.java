@@ -1,4 +1,7 @@
 import java.util.List;
+
+// import javax.smartcardio.Card;
+
 import java.util.ArrayList;
 
 /**
@@ -62,7 +65,18 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		
+		ArrayList<Card> shuffled = new ArrayList<Card>(cards.size());
+
+		int randIndex = 0;
+
+		while (cards.size() > 0) {
+			
+			randIndex = (int) (Math.random() * cards.size());
+			shuffled.add(cards.remove(randIndex));
+		}
+
+		cards = shuffled;
 	}
 
 	/**

@@ -1,0 +1,17 @@
+TNPG - peeps (Andrew, Brian, Pserb)
+APCS pd6
+L07: But These Go Up To Eleven
+2022-03-21
+time spent - many hours sadly doing it (3+ hours)
+
+
+Weekend: Worked up to activity 4 (1 hour)
+Monday: Worked for an hour as well
+Used all of classtimes to do this as well (tried different strategies - first we just brute forced through it, then we tried reading all instructions first)
+
+
+QCC:
+
+why when I tried to get a new array to point to the specified array, it always removed the question (shuffler.java activity 3)
+What are .jar and .bat files?
+What is the different between an abstract class and an interface, does one contian both abstract methods and working methods while the other is just abstract?
