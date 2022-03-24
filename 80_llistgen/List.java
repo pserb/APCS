@@ -1,3 +1,9 @@
+// WON (Brian, Paul, Ethan)
+//APCS
+//HW 77 -- Insert Remove -- Linked Lists
+//2020--03--15
+//time spent: .2 hours
+
 /***
  * interface List
  * subset of actual Java List interface
@@ -7,11 +13,7 @@
  *  built-in Java library interface.
  *
  * new in version 2.0:
- * REMOVE-AT-INDEX
- * ADD-AT-INDEX
- *
- * new in version 3.0:
- * LIST IS NOW GENERIC
+ * REMOVE
  **/
 
 public interface List<T>
@@ -19,8 +21,8 @@ public interface List<T>
   //add node to list, containing input String as its data
   public boolean add( T x );
 
-  //insert at specified index
-  public void add( int index, T newVal );
+  //insert node at specified index
+  public void add( int index, T x );
 
   //remove node from list, return its data
   public T remove( int index );
