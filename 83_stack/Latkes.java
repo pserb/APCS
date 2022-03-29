@@ -3,7 +3,7 @@ Team WON: Paul Serbanescu, Ethan Lam, Brian Wang
 APCS
 HW83: Stacks on Stacks
 2022-03-28
-time spent: hrs
+time spent: 0.4 hrs
 
 Wikipedia says...
 In CS, an abstract data type (ADT) is a mathematical model for data types
@@ -24,9 +24,12 @@ and the behavior of these operations.
 
 /***
     DISCO
+      Stacks apparentally work like arraylists, expanding in size to accomodate additions if need be.
+      This leads to the same amortized linear add that arraylist has
 
     QCC
-
+      Would it be easier to base the stack off of an arraylist instead of an array? They seem to have almost identical functionality.
+      
  **/
 
 
@@ -41,7 +44,7 @@ public class Latkes
   {
     _stack = new String[initCapacity];
     _stackSize = 0;
-  }// O(?)
+  }// O(1)
 
 
   //means of insertion
@@ -57,7 +60,7 @@ public class Latkes
 
     _stack[_stackSize] = s;
     _stackSize += 1;
-  }// O(?)
+  }// O(n) (amortized)
 
 
   //means of removal
@@ -71,21 +74,21 @@ public class Latkes
       _stackSize -= 1;
       return ret;
     }
-  }// O(?)
+  }// O(1)
 
 
   //chk for emptiness
   public boolean isEmpty()
   {
     return _stackSize < 1;
-  }// O(?)
+  }// O(1)
 
 
   //chk for fullness
   public boolean isFull()
   {
     return _stackSize == _stack.length;
-  }// O(?)
+  }// O(1)
 
 
   //main method for testing
