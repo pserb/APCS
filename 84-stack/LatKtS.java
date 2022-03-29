@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /***
  * class LatKtS
  * SKELETON
@@ -7,7 +9,7 @@
 
 public class LatKtS
 {
-  public static final String[] OPENINGS = {"(", "[", "{"};
+  // public static final String[] OPENINGS = {"(", "[", "{"};
   public static final String[] CLOSINGS = {")", "]", "}"};
 
   /***
@@ -38,17 +40,22 @@ public class LatKtS
    **/
   public static boolean allMatched( String s )
   {
+    ArrayList<String> OPENINGS = new ArrayList<>();
+    OPENINGS.add("(");
+    OPENINGS.add("[");
+    OPENINGS.add("{");
+
+    if (OPENINGS.contains(s.substring(s.length()-1, s.length()))) return false;
+
     Latkes milleFeuille = new Latkes(10);
     for (int i = 0; i < s.length(); i++) {
       String letter = s.substring(i,i+1);
       milleFeuille.push(letter);
-      System.out.println(letter);
 
       for (int j = 0; j < CLOSINGS.length; j++) {
         if (letter.equals(CLOSINGS[j])) { // letter is a closing paren
-          if (milleFeuille.pop().equals(OPENINGS[j])) {
-            milleFeuille.pop();
-          } else {
+          milleFeuille.pop();
+          if (OPENINGS.indexOf(milleFeuille.pop()) != j) {
             return false;
           }
         }
