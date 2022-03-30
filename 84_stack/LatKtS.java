@@ -58,8 +58,11 @@ public class LatKtS
      * return indexOf(object) >= 0;
      */
 
-    //if last char is an opening
+    //if last paren is an opening
     if (OPENINGS.contains(s.substring(s.length()-1, s.length()))) return false;
+
+    //if first paren is a closing
+    if (CLOSINGS.contains(s.substring(0, 1))) return false;
 
     Latkes milleFeuille = new Latkes(10);
 
