@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 
-/***
+/*
+Team WON: Paul Serbanescu, Ethan Lam, Brian Wang
+APCS
+HW84: Stacks: What do they do?
+2022-03-28
+time spent: 0.4 hrs
+
  * class LatKtS
  * SKELETON
  * driver class for Latkes
