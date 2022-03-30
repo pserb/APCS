@@ -1,0 +1,8 @@
+Team WON : Paul Serbanescu, Brian Wang, Ethan Lam
+APCS
+HW85: Leon Leonwood Stack
+22-3-30
+time spent: 0.2hr
+
+Q: why use LinkedList or ArrayList as the underlying vessel of a Stack?
+      - what are pros / cons?
