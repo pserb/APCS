@@ -59,13 +59,14 @@ public class Scheme
 
     for (int i = ex.length-1; i >= 0; i--) {
       stk.push(ex[i]);
+      System.out.println(stk.toString());
 
       if (stk.peek().equals("(")) {
         stk.pop();
+
         String op = stk.pop();
-        int oper = 0;
-        //System.out.println(Integer.parseInt(stk.peek()));
         int res = Integer.parseInt(stk.pop());
+
         while (!stk.peek().equals(")")) {
           if(op.equals("+")){
             res += Integer.parseInt(stk.pop());
@@ -77,8 +78,8 @@ public class Scheme
             res *= Integer.parseInt(stk.pop());
           }
         }
+
         stk.pop();
-        //System.out.println(res);
         stk.push(String.valueOf(res));
       }
     }
