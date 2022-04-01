@@ -1,4 +1,30 @@
 /***
+Team WON: Paul Serbanescu, Brian Wang, Ethan Lam
+APCS
+HW86 - What a Racket - NO NOT AGAIN NOT THIS
+2022 - 03 - 31
+Time Spent: 0.5 hrs probably
+
+Disco:
+  String manipulation in java to this extent is REALLY annoying
+  Stacks do help a lot
+
+QCC:
+  Division?
+
+  ALGORITHIM for EVALUATING A SCHEME EXPRESSION:
+  1. Split the string into a string array seperated by spaces
+  2. For each element in the string array starting from the end, push that element to a stack
+  3. If the current element being added is a open parenthesis:
+        Pop the current element (open paren)
+        Pop the current element and save it as a string for operator (+/-/*)
+        Pop the current element and save it as a result value (number)
+        while the next element is not a close parenthesis:
+          Check the operator saved previously, and perform that operator on res and the return value of another call of Pop
+        Once a close parenthesis is hit, pop the parenthesis and push the res value
+  4. Continue loading elements until the stack is reduced to one number
+  5. Return number 
+
  * class Scheme
  * Simulates a rudimentary Scheme interpreter
  *
@@ -35,13 +61,29 @@ public class Scheme
       stk.push(ex[i]);
 
       if (stk.peek().equals("(")) {
-        while (!stk.isEmpty()) {
-          
+        stk.pop();
+        String op = stk.pop();
+        int oper = 0;
+        //System.out.println(Integer.parseInt(stk.peek()));
+        int res = Integer.parseInt(stk.pop());
+        while (!stk.peek().equals(")")) {
+          if(op.equals("+")){
+            res += Integer.parseInt(stk.pop());
+          }
+          else if(op.equals("-")){
+            res -= Integer.parseInt(stk.pop());
+          }
+          else if(op.equals("*")){
+            res *= Integer.parseInt(stk.pop());
+          }
         }
+        stk.pop();
+        //System.out.println(res);
+        stk.push(String.valueOf(res));
       }
     }
 
-    return "hi";
+    return stk.pop();
   }//end evaluate()
 
 
@@ -79,7 +121,6 @@ public class Scheme
       System.out.println(zoo1);
       System.out.println("zoo1 eval'd: " + evaluate(zoo1) );
       //...7
-      /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
       String zoo2 = "( + 4 ( * 2 5 ) 3 )";
       System.out.println(zoo2);
@@ -95,6 +136,7 @@ public class Scheme
       System.out.println(zoo4);
       System.out.println("zoo4 eval'd: " + evaluate(zoo4) );
       //...-4
+      /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
   }//main()
 
