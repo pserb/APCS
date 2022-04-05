@@ -1,0 +1,27 @@
+data sets:
+
+§ http://www.kaggle.com
+§ http://www.data.gov
+§ https://toolbox.google.com/datasetsearch
+
+
+To make a JAR available to runtime environment (JRE)...
+
+```
+$ javac -classpath .:sinbad.jar -d . Driver.java
+$ java -classpath.:sinbad.jar Driver
+```
+
+411 on sinbad 
+https://berry-cs.github.io/sinbad/install-java
+
+## Activity 1
+1. piazza.com and github.com
+2. github.com: user information (username and password) and IP address
+   piazza.com: registration info (name, email, password) posts, messages, events, and other user-generated content
+3. Delimited data is data that fits a format that we deem important. You can delimit data to fit your needs
+4. The first line tells you what type of data will be in the comment (ex: population, city name, etc.)
+5. kpop and NFTs / crypto
+6. What is the average increase in streams of a kpop group before an anticipated release of a new song /album
+   On average, how much money is made off NFTs / crypto each day (or lost)
+7. 
