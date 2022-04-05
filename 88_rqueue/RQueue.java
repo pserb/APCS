@@ -75,12 +75,15 @@ public class RQueue<T> implements Queue<T>
    **/
   public void sample ()
   {
-    _temp = _front;
+    LLNode<T> _temp = _front;
     int random = (int) (Math.random() * _size);
     for (int i = 0; i < random; i++) {
       _temp = _temp.getNext();
     }
     //TODO: SWAP _temp and _front
+    T tmpCargo = _front.getCargo();
+    _front.setCargo(_temp.getCargo());
+    _temp.setCargo(tmpCargo);
   }//O(?)
 
 
@@ -124,18 +127,18 @@ public class RQueue<T> implements Queue<T>
 
     System.out.println("\nnow dequeuing...");
     System.out.println( PirateQueue.dequeue() );
-    System.out.println("Queue is now: \n" + PirateQueue );
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+    // System.out.println("\nQueue is now: \n" + PirateQueue );
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
-
+    
     System.out.println("\nnow dequeuing fr empty queue...\n" +
-                       "(expect NPE)\n");
+    "(expect NPE)\n");
     System.out.println( PirateQueue.dequeue() );
-
+    
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main
