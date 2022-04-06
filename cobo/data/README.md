@@ -1,7 +1,7 @@
 # team JIMIN
 *\~Ryan Lau\~*\
-*\~Melody Lew\~*
-*\~Paul Serbanescu\~*\
+*\~Melody Lew\~*\
+*\~Paul Serbanescu\~*
 
 data sets:
 
