@@ -46,7 +46,7 @@ public class KnightTour
 {
   public static void main( String[] args )
   {
-    int n = 8;
+    int n = 5;
 
     try {
       n = Integer.parseInt( args[0] );

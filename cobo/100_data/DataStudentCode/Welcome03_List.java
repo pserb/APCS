@@ -18,10 +18,18 @@ public class Welcome03_List {
       System.out.println("Enter a state abbreviation: ");
       String state = sc.next();
       System.out.println("Stations in " + state);
+
+      WeatherStation southernmost = allstns.get(0);
+
       for (WeatherStation ws : allstns) {
          if (ws.isLocatedInState(state)) {
             System.out.println("  " + ws.getId() + ": " + ws.getName());
          }
+         if (ws.getLat() < southernmost.getLat()) { //change to > for northernmost
+            southernmost = ws;
+         }
       }
+
+      System.out.println("Southernmost is: " + "  " + southernmost.getId() + ": " + southernmost.getName());
    }
 }

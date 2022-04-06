@@ -128,6 +128,7 @@ public class RQueue<T> implements Queue<T>
     System.out.println("\nnow dequeuing...");
     System.out.println( PirateQueue.dequeue() );
     // System.out.println("\nQueue is now: \n" + PirateQueue );
+    System.out.println("\npeeking front: " + PirateQueue.peekFront());
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
