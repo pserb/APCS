@@ -8,11 +8,11 @@ data sets:
 To make a JAR available to runtime environment (JRE)...
 
 ```
-$ javac -classpath .:sinbad.jar -d . Driver.java
-$ java -classpath.:sinbad.jar Driver
+$ javac -classpath .:/path/to/sinbad.jar -d . Driver.java
+$ java -classpath.:/path/to/sinbad.jar Driver
 ```
 
-411 on sinbad 
+411 on sinbad
 https://berry-cs.github.io/sinbad/install-java
 
 ## Activity 1
@@ -24,4 +24,16 @@ https://berry-cs.github.io/sinbad/install-java
 5. kpop and NFTs / crypto
 6. What is the average increase in streams of a kpop group before an anticipated release of a new song /album
    On average, how much money is made off NFTs / crypto each day (or lost)
-7. 
+
+## Activity 3
+1. The temperature at Atlanta, Hartsfield - Jackson Atlanta International Airport, GA is 66.0F
+2. KNYC
+   The temperature at New York City, Central Park, NY is 49.0F
+3. <see code>
+4. 48
+5. By latitude and longitude
+6. NSTU: Pago Pago, AS, Samoa
+7. What is the northernmost?
+8. Very little (< to >)
+
+how much taller is the tallest basketball player than the shortest basketball player
