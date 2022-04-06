@@ -1,17 +1,20 @@
-Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon
+JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
 APCS
-LAB08 --
+LAB08 -- America's Next Top Data Scientist
 2022-04-05
-time spent: <elapsed time in hours, rounded to nearest tenth>
+time spent: 2.0hrs + class time
 
 
 DISCO
+.jar stands for Java ARchive.
 
 
 QCC
+What is the difference between RSS and XML. When would using one be more advantagous?
+Why was a .jar file provided rather than a .class file?
 
 
-<TNPG>'s CSV FLOW:
+JIMIN's CSV FLOW:
 <insert your description of your tools and workflow in creating, editing CSV files>
 
 
