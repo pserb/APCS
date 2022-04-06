@@ -1,0 +1,37 @@
+JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+APCS
+LAB08 -- America's Next Top Data Scientist
+2022-04-05
+time spent: 2.5hrs + class time
+
+
+DISCO
+.jar stands for Java ARchive.
+sinbad.jar includes java classes (DataSource)
+.jar files are archives of multiple java classes -> class files are only one java class
+Kaggle and data.gov is a good place to find datasets.
+
+
+
+QCC
+What is the difference between RSS and XML. When would using one be more advantagous?
+Why was a .jar file provided rather than a .class file?
+Difference between .jar and .class if both include compiled java code?
+
+How do we make our own .jar file?
+
+JIMIN's CSV FLOW:
+new scanner(path/to/file)
+skip firstline (headers for col)
+while (has next line)
+    split into temp array 
+    grab desired values by indexing the array
+
+    add new DataType (ie Player) to arraylist of DataType
+close input
+
+iterate through arraylist looking for trends
+
+TRUBZ
+scanner input:
+    need to catch FileNotFoundException

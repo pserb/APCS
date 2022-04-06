@@ -1,3 +1,9 @@
+// JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS
+// LAB08 -- America's Next Top Data Scientist
+// 2022-04-05
+// time spent: 2.5hrs + class time
+
 /*
  * Arrays of objects
  */
