@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 /**
-* Class ALQueue<E> implements Queue<E>
-* A FIFO implementation
+* class ALQueue<E> implements Queue<E>.
+* Implementation using an ArrayList
 */
 
 public class ALQueue<E> implements Queue<E> {
   private ArrayList<E> list = new ArrayList<>();
 
   /**
-  * passes through ArrayList add() functionality
-  * O(1) runtime.
+  * passes through ArrayList {@link ArrayList#add() add} functionality
+  * O(1) runtime
   *
   * @param e value to be added
   * @return true
@@ -20,8 +20,8 @@ public class ALQueue<E> implements Queue<E> {
   }
 
   /**
-  * passes through ArrayList remove(index) functionality
-  * O(n) runtime.
+  * passes through ArrayList {@link ArrayList#remove(int index) remove} functionality
+  * O(n) runtime
   *
   * @return value removed
   */
@@ -30,8 +30,8 @@ public class ALQueue<E> implements Queue<E> {
   }
 
   /**
-  * passes through ArrayList get(index) functionality
-  * O(1) runtime.
+  * passes through ArrayList {@link ArrayList#get(int index)} functionality
+  * O(1) runtime
   *
   * @return frontmost value
   */
@@ -40,8 +40,8 @@ public class ALQueue<E> implements Queue<E> {
   }
 
   /**
-  * passes through ArrayList isEmpty() functionality
-  * O(1) runtime.
+  * passes through ArrayList {@link ArrayList#isEmpty() isEmpty} functionality
+  * O(1) runtime
   *
   * @return true if Queue is empty
   */
