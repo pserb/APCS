@@ -1,5 +1,14 @@
 /*
+Team Won (Paul Serbanescu, Brian Wang, Ethan Lam)
+APCS
+2022--04--12
+HW89 - Queue Two Ways
+Time Spent: 0.3 hrs
 */
+
+/**
+ * class QueueTester
+ */
 
 public class QueueTester {
   public static void main(String[] args) {
