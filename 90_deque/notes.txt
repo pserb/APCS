@@ -1,0 +1,12 @@
+Team WON (Paul Serbanescu, Brian Wang, Ethan Lam)
+APCS
+HW90 -- Swabbing the Deque / Double Ended Queues / Implementing Deques using Java
+2022-04-12
+time spent: 0.3 hrs
+
+Disco:
+Pass-through makes coding very fast
+Linked lists are basically made for this
+
+QCC:
+What methods exactly do we need? All the oracle API methods? Even things like the iterator methods? 
