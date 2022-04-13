@@ -1,6 +1,16 @@
+/*
+Team WON (Paul Serbanescu, Brian Wang, Ethan Lam)
+APCS
+HW90 -- Swabbing the Deque / Double Ended Queues / Implementing Deques using Java
+2022-04-12
+time spent: 0.3 hrs
+*/
+
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class LLDeque<E> implements Deque<E> {
+  
   private LinkedList<E> list = new LinkedList<E>();
 
   public E peekFirst() {
@@ -38,4 +48,25 @@ public class LLDeque<E> implements Deque<E> {
   public boolean isEmpty() {
     return list.isEmpty();
   }
+
+  public Iterator<E> iterator() {
+    return list.iterator();
+  }
+
+  public Iterator<E> descendingIterator() {
+    return list.descendingIterator();
+  }
+
+  public boolean removeFirstOccurrence(Object o) {
+    return list.removeFirstOccurrence(o);
+  }
+  public boolean removeLastOccurrence(Object o) {
+    return list.removeLastOccurrence(o);
+  }
+
+  public String toString() {
+    return list.toString();
+  }
 }
+
+
