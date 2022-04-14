@@ -6,9 +6,9 @@ HW90 -- Swabbing the Deque / Double Ended Queues / Implementing Deques using Jav
 time spent: 0.3 hrs
 */
 
-public class DequeTester {
+public class MRKPirateBae {
   public static void main(String[] args) {
-    LLDeque<String> deque = new LLDeque<String>();
+    WeOffTheGridGridGrid<String> deque = new WeOffTheGridGridGrid<String>();
 
     // using deque as stack (FILO)
     System.out.println("Now using deque as a stack...");

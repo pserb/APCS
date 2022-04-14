@@ -9,7 +9,7 @@ time spent: 0.3 hrs
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class LLDeque<E> implements Deque<E> {
+public class WeOffTheGridGridGrid<E> implements Deque<E> {
   
   private LinkedList<E> list = new LinkedList<E>();
 
