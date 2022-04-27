@@ -1,3 +1,10 @@
+// JIMIN: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd06
+// L09: Some Folks Call It A Charades
+// 2022-04-27
+// time spent: 5 hours
+
+
 import java.util.ArrayList;
 
 /**
@@ -27,6 +34,7 @@ public class CelebrityGame
 	{
 		_celebGameList = new ArrayList<Celebrity>();
 		_gameWindow = new CelebrityFrame(this);
+        prepareGame();
 	}
 
 	/**
@@ -48,7 +56,12 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
-		return (guess.toLowerCase().strip().equals(_gameCelebrity.getAnswer().toLowerCase().strip()));
+		if (_gameCelebrity.getAnswer().strip().equalsIgnoreCase(guess.strip())) {
+            _celebGameList.remove(_gameCelebrity);
+            return true;
+        }
+
+        return false;
 	}
 
 	/**
@@ -56,14 +69,21 @@ public class CelebrityGame
 	 * Sets the current celebrity as the first item in the list. Opens the game
 	 * play screen.
 	 */
-	public void play()
-	{
+    public void play()
+    {
+        if (_celebGameList != null && _celebGameList.size() > 0) {
+            this._gameCelebrity = _celebGameList.get(0);
+            _gameWindow.replaceScreen("GAME");
+        }
+    }
 
-	}
+    public void replay() {
+        _gameWindow.replaceScreen("START");
+    }
 
 	/**
 	 * Adds a Celebrity of specified type to the game list
-	 * 
+	 *
 	 * @param name
 	 *            The name of the celebrity
 	 * @param guess
@@ -73,7 +93,8 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-
+        Celebrity c = new Celebrity(name, guess);
+        _celebGameList.add(c);
 	}
 
 	/**
@@ -95,7 +116,7 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		return false;
+		return clue.length() >= 10;
 	}
 
 	/**
@@ -105,7 +126,7 @@ public class CelebrityGame
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return _celebGameList.size();
 	}
 
 	/**
@@ -116,7 +137,7 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		return _gameCelebrity.getClue();
 	}
 
 	/**
@@ -127,6 +148,6 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		return _gameCelebrity.getAnswer();
 	}
 }

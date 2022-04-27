@@ -3,7 +3,7 @@
 ## TODO
 * ~~Celebrity class~~
 * ~~CelebrityRunner class~~
-* CelebrityGame class
-* Gameplay methods
-* StartPanel class
+* ~~CelebrityGame class~~
+* ~~Gameplay methods~~
+* ~~StartPanel class~~
 * Celebrity subclasses

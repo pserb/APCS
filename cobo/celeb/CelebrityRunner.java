@@ -1,3 +1,10 @@
+// JIMIN: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd06
+// L09: Some Folks Call It A Charades
+// 2022-04-27
+// time spent: 5 hours
+
+
 /**
  * Starts the Celebrity Game application
  * @author cody.henrichsen
@@ -11,11 +18,6 @@ public class CelebrityRunner
 	 */
 	public static void main(String [] args)
 	{
-		Celebrity Jimin = new Celebrity("Jimin", "BTS");
-		System.out.println(Jimin.getClue());
-		System.out.println(Jimin.getAnswer());
-		Jimin.setClue("vocalist of BTS");
-		Jimin.setAnswer("Jungkook");
-		System.out.println(Jimin);
+        CelebrityGame foo = new CelebrityGame();
 	}
 }
