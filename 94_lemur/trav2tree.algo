@@ -1,0 +1,61 @@
+JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+APCS pd6
+HW94 -- Reforestation
+2022-05-06f
+time spent: 2 hrs
+
+
+DISCO
+------------------------------------------------
+* In preorder and inorder, if the letter is in the same position in both orders, then it is a parent/root.
+* In inorder and postorder, if the letter is in the same positioin in both orders, then it is 
+================================================
+
+
+QCC
+------------------------------------------------
+* Can we have two of the same letters in a tree?
+================================================
+
+
+HOW KEEN ARE YOUR POWERS OF OBSERVATION?
+------------------------------------------------
+Q: For a given binary tree, how many unique pre-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique in-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique post-order traversals are there?
+A: 1
+
+Q: For a given traversal, how many unique trees could have produced it?
+A: Depends on the given traversal
+
+Q: Given a pre-order traversal, what can you infer about its tree?
+A: The first letter is the root
+
+Q: Given a post-order traversal, what can you infer about its tree?
+A: The last letter is the root
+
+Q: What does "1-to-1" mean?
+A: One child for one node ?
+
+Q: What does "onto" mean?
+A: Every child of one node corresponds to at least one child of another node ? 
+
+================================================
+
+
+ALGO for Reconstructing Binary Tree Given Preorder and In-Order Traversal 
+------------------------------------------------
+givens: preorder traversal and inorder traversal
+
+procedure:
+0. Set the first node in the pre-order traversal as the root of the tree
+1. Iterate through every node following the first in the pre-order traversal
+    a. Check if there are values between the last node and this node in the in-order traversal.
+        i. If so, put this node on the right of the last node
+        ii. Else if, put the node on the left 
+================================================
+(replicate the algo section above as many times as necessary for distinct algos)
