@@ -1,0 +1,22 @@
+JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+APCS pd6
+HW95 -- Algorithm as Data Structure
+2022-05-09m
+time spent: 1.0  hrs
+
+DISCO
+0. Drawing the BST on paper given the nodes helped in figuring out how to implement the insert function.
+1. Given the nodes and the value of the root node, there is can only be one unique BST???
+
+QCC
+0. Is there a way to print out what the tree would look like as if we drew it on paper?
+1. Why is the constructor needed?
+
+
+With L = level, d = depth, h = height…
+
+1. a perfect binary tree has 2^(h+1) - 1 nodes
+2. at each level, a perfect binary tree has 2^h nodes
+3. height of a complete binary tree w/ n nodes is the floor of log(2, n)
+
+

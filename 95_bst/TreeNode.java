@@ -1,3 +1,9 @@
+// JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd6
+// HW95 -- Algorithm as Data Structure
+// 2022-05-09m
+// time spent: 1.0  hrs
+
 /**
  * class TreeNode
  * SKELETON
