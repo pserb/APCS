@@ -176,6 +176,7 @@ public class BST
     //helper
     public int heightHelper(TreeNode stTree) {
         if (stTree == null) return 0;
+	if (stTree.getLeft() == null && stTree.getRight() == null) return 0;
         return Math.max(heightHelper(stTree.getLeft()), heightHelper(stTree.getRight())) + 1;
     }
 
