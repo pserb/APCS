@@ -1,9 +1,9 @@
 import java.util.LinkedList;
 // JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu (ft. Sophia Eiden)
 // APCS pd6
-// HW96 -- BSTs is the Perfect Place for Shade
-// 2022-05-10t
-// time spent: 1.0  hrs
+// HW97 -- Prune Your Tree
+// 2022-05-11w
+// time spent: 2.0  hrs
 
 /**
  * class BST
