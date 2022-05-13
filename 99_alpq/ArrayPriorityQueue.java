@@ -8,14 +8,17 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
         list = new ArrayList<T>();
     }
 
+    // O(1)
     public void add(T x) {
         list.add(x);
     }
 
+    // O(1)
     public boolean isEmpty() {
         return list.isEmpty();
     }
 
+    // O(n)
     public T peekMin() {
         // search and return
         T minVal = list.get(0);
@@ -28,6 +31,7 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
         return minVal;
     }
 
+    // O(n)
     public T removeMin() {
         T retVal = this.peekMin();
         list.remove(retVal);
