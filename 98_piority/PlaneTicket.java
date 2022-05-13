@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 public class PlaneTicket implements Comparable<PlaneTicket> {
 
-    private static final ArrayList<String> seatClassPriority = new ArrayList<>();
-
+    private ArrayList<String> seatClassPriority = new ArrayList<>();
     private String name;
     private String seatClass;
     private int priority;

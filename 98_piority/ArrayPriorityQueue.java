@@ -81,5 +81,6 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
         System.out.println(apQPlane.removeMin()); //Jack Harlow
         System.out.println(apQPlane.removeMin()); //Ariana Grande
         System.out.println(apQPlane.removeMin()); //Taylor Swift
+
     }
 }
