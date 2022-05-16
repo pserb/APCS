@@ -1,45 +1,49 @@
+// JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd6
+// HW99 -- Some Are More Equal Than Others, Codified
+// 2022-05-13f
+// time spent: 0.5 hrs
+
 import java.util.ArrayList;
 
-public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
+public class ArrayPriorityQueue implements PriorityQueue {
 
-    private ArrayList<T> list;
+    private ArrayList<Integer> list;
 
     public ArrayPriorityQueue() {
-        list = new ArrayList<T>();
+        list = new ArrayList<Integer>();
     }
 
-    // O(1)
-    public void add(T x) {
-        list.add(x);
-    }
-
-    // O(1)
     public boolean isEmpty() {
         return list.isEmpty();
     }
 
-    // O(n)
-    public T peekMin() {
-        // search and return
-        T minVal = list.get(0);
-        for (T item : list) {
-            if (((Comparable<T>) item).compareTo( minVal ) < 0) {
-                minVal = item;
+    public void add(int x) {
+        list.add(x);
+    }
+
+    public int getMinIndex() {
+        int ret = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) < list.get(ret)) {
+                ret = i;
             }
         }
 
-        return minVal;
+        return ret;
     }
 
-    // O(n)
-    public T removeMin() {
-        T retVal = this.peekMin();
-        list.remove(retVal);
-        return retVal;
+    public int peekMin() {
+        // search and return
+        return list.get(getMinIndex());
+    }
+
+    public int removeMin() {
+        return list.remove(getMinIndex());
     }
 
     public static void main(String[] args) {
-        ArrayPriorityQueue<Integer> apQ = new ArrayPriorityQueue<Integer>();
+        ArrayPriorityQueue apQ = new ArrayPriorityQueue();
 
         apQ.add(2);
         apQ.add(4);
@@ -53,38 +57,5 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
         System.out.println(apQ.removeMin()); //3
         System.out.println(apQ.removeMin()); //4
         System.out.println(apQ.removeMin()); //7
-
-
-        ArrayPriorityQueue<String> apQStr = new ArrayPriorityQueue<String>();
-
-        apQStr.add("b");
-        apQStr.add("a");
-        apQStr.add("c");
-        apQStr.add("A");
-        apQStr.add("!");
-
-        System.out.println("\nTesting APQ with Strings...");
-        System.out.println(apQStr.removeMin()); //!
-        System.out.println(apQStr.removeMin()); //A
-        System.out.println(apQStr.removeMin()); //a
-        System.out.println(apQStr.removeMin()); //b
-        System.out.println(apQStr.removeMin()); //c
-
-
-        ArrayPriorityQueue<PlaneTicket> apQPlane = new ArrayPriorityQueue<PlaneTicket>();
-
-        apQPlane.add(new PlaneTicket("Jack Harlow", "business"));
-        apQPlane.add(new PlaneTicket("Freddie Mercury", "first"));
-        apQPlane.add(new PlaneTicket("Ariana Grande", "economy"));
-        apQPlane.add(new PlaneTicket("Kanye West", "first"));
-        apQPlane.add(new PlaneTicket("Taylor Swift", "economy"));
-
-        System.out.println("\nTesting APQ with Airplane Tickets...");
-        System.out.println(apQPlane.removeMin()); //Freddie Mercury
-        System.out.println(apQPlane.removeMin()); //Kanye West
-        System.out.println(apQPlane.removeMin()); //Jack Harlow
-        System.out.println(apQPlane.removeMin()); //Ariana Grande
-        System.out.println(apQPlane.removeMin()); //Taylor Swift
-
     }
 }

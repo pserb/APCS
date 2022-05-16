@@ -1,7 +1,16 @@
-// duke ap subset definition of PriorityQueue interface
-public interface PriorityQueue<T> {
-    public void add(T x);
+// JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd6
+// HW99 -- Some Are More Equal Than Others, Codified
+// 2022-05-13f
+// time spent: 0.5 hrs
+
+public interface PriorityQueue
+{
+    public void add( int x );
+
     public boolean isEmpty();
-    public T peekMin();
-    public T removeMin();
+
+    public int peekMin();
+    
+    public int removeMin();        
 }

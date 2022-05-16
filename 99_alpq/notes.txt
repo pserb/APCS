@@ -1,0 +1,17 @@
+JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+APCS pd6
+HW99 -- Some Are More Equal Than Others, Codified
+2022-05-13f
+time spent: 0.5 hrs
+
+DISCO
+0. Similar to OrderedArrayList with the difference being that you do not sort the elements of the ArrayList as you add them in.
+1. This results in the following runtimes:
+    isEmpty()   -> O(1)
+    add(int x)  -> O(1)
+    peekMin()   -> O(n)
+    removeMin() -> O(n)
+
+QCC
+0. When would we use an ArrayPriorityQueue instead of OrderedArrayList?
+
