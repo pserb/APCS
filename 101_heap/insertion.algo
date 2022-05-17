@@ -1,0 +1,11 @@
+CASE 1: The element being added is greater than all the existing nodes
+
+0. set element as leaf
+
+CASE 2: The element being added is greater than some nodes, but less than others
+
+0. set element as leaf
+1. compare to parent node. if less than parent node, swap positions. if greater than parent node, keep position
+
+CASE 3: less than min/root
+0. set root’s parent as the element

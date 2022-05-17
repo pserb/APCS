@@ -1,0 +1,6 @@
+0. Swap node you want to delete with the furthest right node
+1. Delete that node you just swapped (it is now a leaf)
+2. Heapify (make sure heap is heaped):
+    0. if heap is heap (heap property is true), do nothing
+    1. else if the replacement node's value is less than or equal to its parent's node value, swap the two, repeat step 2
+    2. else, swap the replacement node with the smallest child, and repeat step 2 

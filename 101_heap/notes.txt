@@ -1,0 +1,7 @@
+DISCO: 
+0. Heap uses: https://piazza.com/class/kue5pmk0w7n70n?cid=879
+   O(1) lookup time for the smallest/largest elements, useful when you want to always remove the smallest/largest item of a dataset
+
+QCC:
+0. Are we allowed to move up a tree?
+1. Can we have two of the same values in a tree? What happens?
