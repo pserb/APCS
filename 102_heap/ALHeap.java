@@ -63,7 +63,7 @@ public class ALHeap
   public boolean isEmpty()
   {
     return _heap.isEmpty();
-  }//O(n)
+  }//O(1)
 
 
   /**
@@ -127,7 +127,7 @@ public class ALHeap
 
     // swap root with the last node
     swap(0, _heap.size()-1);
-    _heap.remove(_heap.size()-1); // TODO: avoid this O(n) operation
+    _heap.remove(_heap.size()-1); // O(1) when removing the last element of an AL
 
     // index of the current node we are looking at (start at root)
     int parentIndex = 0;
@@ -144,7 +144,7 @@ public class ALHeap
     }
 
     return retVal;
-  }//O(nlogn)
+  }//O(logn)
 
 
   /**
