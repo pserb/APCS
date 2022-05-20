@@ -28,19 +28,6 @@ public class Heapsort
    */
   public int[] sort( int[] data )
   {
-    // System.out.print( "Input array: \t" );
-    // printArr( data );
-
-
-    //STEP 1: heapify array contents
-    //slot 0 will contain root
-    //(heap will grow from L to R)
-
-    // maxHeapify(data, data.length);
-    // System.out.println( "Array heapified. Root at index 0" );
-    // printArr( data );
-
-
     //STEP 1&2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
 
