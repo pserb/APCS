@@ -28,62 +28,34 @@ public class Heapsort
    */
   public int[] sort( int[] data )
   {
-    System.out.print( "Input array: \t" );
-    printArr( data );
+    // System.out.print( "Input array: \t" );
+    // printArr( data );
 
 
     //STEP 1: heapify array contents
     //slot 0 will contain root
     //(heap will grow from L to R)
 
-    maxHeapify(data);
-    System.out.println( "Array heapified. Root at index 0" );
-    printArr( data );
+    // maxHeapify(data, data.length);
+    // System.out.println( "Array heapified. Root at index 0" );
+    // printArr( data );
 
 
-    //STEP 2: repeatedly pull from heap until empty
+    //STEP 1&2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
-    for( int lastLeaf = data.length - 1; lastLeaf > 0; lastLeaf-- ) {
-      //set aside root val
-      int tmp = data[0];
 
-      //swap last leaf (rightmost on bottom level) into root pos
-      swap(0, lastLeaf, data);
-
-      //walk now-out-of-place root node down the tree...
-      int pos = 0;
-      int minChildPos;
-      int maxChildPos;
-
-      while( pos < lastLeaf ) {
-
-        //choose child w/ max value, or check for child
-        maxChildPos = maxChildPos(pos, lastLeaf - 1, data);
-
-        //if no children, then i've walked far enough
-        if ( maxChildPos == -1 )
-          break;
-        //if i am greater than my greatest child, i've walked far enough
-        else if (data[pos] > data[maxChildPos])
-          break;
-        //if i am > least child, swap with that child
-        else {
-            swap(pos, maxChildPos, data);
-            pos = maxChildPos;
-
-        }
-      }
-
-      //overwrite last leaf with old root val
-        data[lastLeaf] = tmp;
-
+    // i shifts the section we want to heapify (once we place the greatest val at the end in its final resting pos, we don't want to include it in the heapify)
+    for (int i = 0; i < data.length; i++) {
+      //heapify (logn operation)
+      maxHeapify(data, data.length-i);
+      //swap root with last index
+      swap(0, data.length-1-i, data);
     }
-
 
     //STEP teh LAST: return modified array
     return data;
 
-  }//end sort() -- O(?)
+  }//end sort() -- O(nlogn)
 
 
 
@@ -108,13 +80,14 @@ public class Heapsort
           break;
       }
     }
-  }//end minHeapify() -- O(?)
+  }//end minHeapify() -- O(logn)
 
 
 
-  private void maxHeapify( int[] a )
+  private void maxHeapify( int[] a, int startPoint )
   {
-    for( int i=1; i<a.length; i++ ) {
+    for( int i=startPoint-1; i>0; i-- ) {
+      // System.out.println("i is: " + i);
       //add a[i] as leaf
       int addValPos = i; //val to add is next non-heap element
 
@@ -132,61 +105,11 @@ public class Heapsort
           break;
       }
     }
-  }//end maxHeapify() -- O(?)
-
-
-
-  //return position of child with least value in input array
-  private int minChildPos( int pos, int last, int[] a )
-  {
-    int retVal;
-    int lc = 2*pos + 1; //index of left child
-    int rc = 2*pos + 2; //index of right child
-
-    //pos is not in the heap or pos is a leaf position
-    if ( lc > last )
-      retVal = -1;
-    //if no right child, then left child is only option for min
-    else if ( rc > last )
-      retVal = lc;
-    //have 2 children, so compare to find least
-    else if ( a[lc] < a[rc] )
-      retVal = lc;
-    else
-        retVal = rc;
-
-    return retVal;
-  }
-
-
-
-  //return position of child with greatest value in input array
-  private int maxChildPos( int pos, int last, int[] a )
-  {
-    int retVal;
-    int lc = 2*pos + 1; //index of left child
-    int rc = 2*pos + 2; //index of right child
-
-    //pos is not in the heap or pos is a leaf position
-    if ( lc > last )
-      retVal = -1;
-    //if no right child, then left child is only option for min
-    else if ( rc > last )
-      retVal = lc;
-    //have 2 children, so compare to find least
-    else if ( a[lc] > a[rc] )
-      retVal = lc;
-    else
-        retVal = rc;
-
-    return retVal;
-  }
+  }//end maxHeapify() -- O(logn)
 
 
 
   //--------------v- HELPER METHODS -v--------------
-  private int minOf( int a, int b ) { return (a<b)?a:b; }
-
   public static void swap( int x, int y, int[] o )
   {
     int tmp = o[x];
